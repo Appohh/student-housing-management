@@ -30,23 +30,25 @@
         {
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(65, 35);
+            this.monthCalendar1.Location = new System.Drawing.Point(18, 18);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(488, 35);
+            this.dataGridView1.ColumnHeadersHeight = 29;
+            this.dataGridView1.Location = new System.Drawing.Point(18, 250);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(300, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(770, 188);
             this.dataGridView1.TabIndex = 1;
             // 
             // Form1
@@ -67,5 +69,6 @@
 
         private MonthCalendar monthCalendar1;
         private DataGridView dataGridView1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
