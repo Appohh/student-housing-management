@@ -28,46 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtDel = new System.Windows.Forms.TextBox();
             this.btnRead = new System.Windows.Forms.Button();
+            this.lbResult = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // txtDel
-            // 
-            this.txtDel.Location = new System.Drawing.Point(278, 102);
-            this.txtDel.Name = "txtDel";
-            this.txtDel.PlaceholderText = "Delimiter";
-            this.txtDel.Size = new System.Drawing.Size(57, 27);
-            this.txtDel.TabIndex = 0;
-            this.txtDel.Text = ",";
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(278, 181);
+            this.btnRead.Location = new System.Drawing.Point(52, 409);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(94, 29);
+            this.btnRead.Size = new System.Drawing.Size(147, 29);
             this.btnRead.TabIndex = 1;
-            this.btnRead.Text = "Read";
+            this.btnRead.Text = "Choose CSV";
             this.btnRead.UseVisualStyleBackColor = true;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            // 
+            // lbResult
+            // 
+            this.lbResult.FormattingEnabled = true;
+            this.lbResult.ItemHeight = 20;
+            this.lbResult.Location = new System.Drawing.Point(52, 32);
+            this.lbResult.Name = "lbResult";
+            this.lbResult.Size = new System.Drawing.Size(392, 324);
+            this.lbResult.TabIndex = 2;
             // 
             // CSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbResult);
             this.Controls.Add(this.btnRead);
-            this.Controls.Add(this.txtDel);
             this.Name = "CSV";
             this.Text = "CSV";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private TextBox txtDel;
         private Button btnRead;
+        private ListBox lbResult;
     }
 }

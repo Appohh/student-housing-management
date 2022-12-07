@@ -19,26 +19,27 @@ namespace studentHouseSolution
 
         public void CSVread()
         {
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "csv File|*.csv";
-            if (opf.ShowDialog() == DialogResult.OK)
-            {
-                string[] lines = System.IO.File.ReadAllLines(opf.FileName);
-                string[][] data = new string[lines.Length][];
-                int i = 0;
-                foreach (string line in lines)
-                {
-                    data[i] = line.Split(txtDel.Text.ToCharArray());
-                    i++;
-                }
-                var dd = data.ToList().ToList();
-            }
+           
 
         }
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            CSVread();
+            handlerCSV csv = new handlerCSV();
+            
+            foreach(var item in csv.Read())
+            {
+                string itemString = "";
+
+                foreach (var item2 in item) {
+                    itemString += item2.ToString();
+                }
+                lbResult.Items.Add(itemString);
+
+
+            }
+
+
         }
     }
 }
