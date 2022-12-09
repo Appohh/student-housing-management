@@ -30,7 +30,7 @@ namespace studentHouseSolution
         {
             List<string> taskData = new List<string>();
 
-            foreach (var item in csv.Read())
+            foreach (var item in csv.Read("AA"))
             {
                 string itemString = "";
 

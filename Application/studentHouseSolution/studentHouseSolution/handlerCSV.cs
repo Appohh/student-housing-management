@@ -13,7 +13,7 @@ namespace studentHouseSolution
         private DataTable dt = new DataTable();
 
         //datalist with data
-        public List<string[]> Read()
+        public List<string[]> Read(string filename)
         {
             //file prompt:
         //    OpenFileDialog opf = new OpenFileDialog();
@@ -58,11 +58,33 @@ namespace studentHouseSolution
 
         }
 
+        public void Write(string file_path)
+        {
+            List<string> columnNames = new List<string>();
+
+            foreach(DataColumn dc in dt.Columns)
+            {
+                columnNames.Add(dc.ToString());
+            }
+
+            List<string> csvLines = new List<string>
+            {
+                String.Join(",", columnNames)
+            };
+            
+            foreach(DataRow dr in dt.Rows)
+            {
+                csvLines.Add(String.Join(",", dr.ItemArray));
+            }
+
+            System.IO.File.WriteAllLines(file_path, csvLines);
+        }
+
         public string? searchDate(string date)
         {
             foreach (DataRow row in this.dt.Rows)
             {
-                if (row == date)
+                if (row.ToString() == date)
                 {
                     return row.ToString();
                 }
