@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -21,6 +22,7 @@ namespace studentHouseSolution
         public Form1()
         {
             InitializeComponent();
+            RefreshGridView();
         }
 
         public void RefreshGridView()
@@ -63,6 +65,48 @@ namespace studentHouseSolution
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+
+
+            string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
+
+
+            try
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                    RefreshGridView();
+                }
+                else if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                    cmd = "select * from tbl_task where date = '@date'";
+                    command.Parameters.Add(new SqlParameter("@date", date));
+
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd, con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dt;
+                        con.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No tasks found!!");
+                    con.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("there is no tasks found!!");
+                con.Close();
+            }
+
+
         }
     }
 }

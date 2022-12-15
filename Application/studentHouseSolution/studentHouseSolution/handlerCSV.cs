@@ -35,6 +35,7 @@ namespace studentHouseSolution
 
         public DataTable Reader(string file_path)
         {
+
             //  get all lines of csv file
             string[] str = System.IO.File.ReadAllLines(file_path);
 
@@ -58,13 +59,13 @@ namespace studentHouseSolution
 
         }
 
-        public string? searchDate(string date)
+        public DataRow searchDate(string date)
         {
             foreach (DataRow row in this.dt.Rows)
             {
-                if (row == date)
+                if (row["date"].ToString() == date)
                 {
-                    return row.ToString();
+                    return row;
                 }
             }
             return null;

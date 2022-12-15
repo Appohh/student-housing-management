@@ -15,9 +15,13 @@ namespace studentHouseSolution
     {
         handlerCSV csv = new handlerCSV();
 
+        DataTable dtShownData;
+
         public CSV()
         {
             InitializeComponent();
+
+            dtShownData = csv.Reader("C:\\Users\\alpay\\Downloads\\testcsv.csv");
         }
 
         public void CSVread()
@@ -28,7 +32,8 @@ namespace studentHouseSolution
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            List<string> taskData = new List<string>();
+            //LIST METHOD:
+           /* List<string> taskData = new List<string>();
 
             foreach (var item in csv.Read())
             {
@@ -41,27 +46,31 @@ namespace studentHouseSolution
                 taskData.Add(itemString);
 
 
-            }
+            } 
 
-            dgData.DataSource = taskData;
+            dgData.DataSource = taskData; */
 
 
             // assign gridview datasource property by datatable
-            dgData.DataSource = csv.Reader("C:\\Users\\alpay\\Downloads\\testcsv.csv");
+            dgData.DataSource = dtShownData;
+
+
 
             // bind the gridview
-    //        dgData.DataBind();
-
-
-
+            // dgData.DataBind();
         }
 
         private void mcCalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
+            DataTable dt = new DataTable();
+
             string date = mcCalendar.SelectionRange.Start.ToString("yyyy-MM-dd");
 
 
-            csv.searchDate(date);
+            //display row in datagridview
+            DataRow row = csv.searchDate(date);
+
+
         }
     }
 }
