@@ -12,6 +12,7 @@ namespace studentHouseSolution
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new CSV());
+            //Application.Run(new AddComplaintForm());
         }
     }
 }
