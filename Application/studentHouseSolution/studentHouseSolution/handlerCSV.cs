@@ -16,21 +16,30 @@ namespace studentHouseSolution
         public List<string[]> Read(string filename)
         {
             //file prompt:
-        //    OpenFileDialog opf = new OpenFileDialog();
-       //     opf.Filter = "csv File|*.csv";
-       //     if (opf.ShowDialog() == DialogResult.OK)
-      //      {
-                string[] lines = System.IO.File.ReadAllLines("C:\\Users\\alpay\\Downloads\\testcsv.csv");
-                string[][] data = new string[lines.Length][];
-                int i = 0;
-                foreach (string line in lines)
-                {
-                    data[i] = line.Split(",".ToCharArray());
-                    i++;
-                }
-                var dd = data.ToList().ToList();
+            //    OpenFileDialog opf = new OpenFileDialog();
+            //     opf.Filter = "csv File|*.csv";
+            //     if (opf.ShowDialog() == DialogResult.OK)
+            //      {
+            string[] lines;
+            OpenFileDialog ofd = new OpenFileDialog();
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                lines = System.IO.File.ReadAllLines(ofd.FileName);
+            }
+            else
+            {
+                return null;
+            }
+            string[][] data = new string[lines.Length][];
+            int i = 0;
+            foreach (string line in lines)
+            {
+                data[i] = line.Split(",".ToCharArray());
+                i++;
+            }
+            var dd = data.ToList().ToList();
 
-                return dd;
+            return dd;
         }
 
         public DataTable Reader(string file_path)
