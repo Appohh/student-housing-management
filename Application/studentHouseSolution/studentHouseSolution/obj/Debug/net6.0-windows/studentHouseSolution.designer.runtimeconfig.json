@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Feynman\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Feynman\\.nuget\\packages"
+      "C:\\Users\\alpay\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\alpay\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

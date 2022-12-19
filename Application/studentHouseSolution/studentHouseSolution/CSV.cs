@@ -32,32 +32,11 @@ namespace studentHouseSolution
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            //LIST METHOD:
-           /* List<string> taskData = new List<string>();
-
-            foreach (var item in csv.Read("AA"))
-            {
-                string itemString = "";
-
-                foreach (var item2 in item) {
-                    itemString += item2.ToString();
-                }
-                lbResult.Items.Add(itemString);
-                taskData.Add(itemString);
-
-
-            } 
-
-            dgData.DataSource = taskData; */
-
-
             // assign gridview datasource property by datatable
             dgData.DataSource = dtShownData;
 
 
 
-            // bind the gridview
-            // dgData.DataBind();
         }
 
         private void mcCalendar_DateChanged(object sender, DateRangeEventArgs e)
@@ -69,8 +48,16 @@ namespace studentHouseSolution
 
             //display row in datagridview
             DataRow row = csv.searchDate(date);
+            dgData.DataSource = null;
+            dgData.ColumnCount = 4;
+            dgData.Columns[0].Name = "Test1";
+            dgData.Columns[1].Name = "Test1";
+            dgData.Columns[2].Name = "Test1";
+            dgData.Columns[3].Name = "Test1";
 
-
+            dgData.Rows.Add(new object[] { "dsa", "string1", "sa" });
+            dgData.Rows.Add(new object[] { false, "string2" });
+            dgData.Rows.Add(row);
         }
     }
 }

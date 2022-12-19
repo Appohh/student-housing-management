@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,10 @@ namespace studentHouseSolution
 {
     public partial class Form1 : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source = MOOI-DING\SQLEXPRESS; Initial Catalog = StudentHouseSolutionDB; Integrated Security = True");
+        //Server=myServerName,myPortNumber;Database=myDataBase;User Id = myUsername; Password=myPassword;
+
+      //  SqlConnection con = new SqlConnection(@"Data Source = remotemysql.com; Initial Catalog = StudentHouseSolutionDB; Integrated Security = True");
+        SqlConnection con = new SqlConnection(@"Server = remotemysql.com, 3306; Initial Catalog = zVrSE88hjg; User Id = zVrSE88hjg; Password = bBS3PzUuZn;");
         SqlCommand command = new SqlCommand();
 
         string cmd;
@@ -37,7 +41,7 @@ namespace studentHouseSolution
                 else if (con.State != ConnectionState.Open)
                 {
                     con.Open();
-                    cmd = "select * from tbl_task";
+                    cmd = "select * from Person";
                     SqlDataAdapter da = new SqlDataAdapter(cmd, con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
