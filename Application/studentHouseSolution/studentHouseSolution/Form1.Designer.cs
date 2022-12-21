@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -48,16 +48,6 @@
             this.monthCalendar1.TitleForeColor = System.Drawing.SystemColors.Highlight;
             this.monthCalendar1.TrailingForeColor = System.Drawing.Color.Blue;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeight = 29;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 250);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(770, 188);
-            this.dataGridView1.TabIndex = 1;
             // 
             // button1
             // 
@@ -108,6 +98,16 @@
             this.label1.Text = "Clean Trash\r\n\r\nfdsagdsagdsag gfsdgfdsg g fdsgfdsg sgsfdg \r\ngfsdgdsf gfsdg gfsdgfs" +
     "dg gfsdgfsd gfsd\r\ngfsdgsd gfsdgfsd\r\n\r\nDue date: 12/3/2000\r\n\r\nStatus: To do";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeight = 29;
+            this.dataGridView1.Location = new System.Drawing.Point(18, 250);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(770, 188);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -121,8 +121,8 @@
             this.Controls.Add(this.monthCalendar1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -130,11 +130,11 @@
         #endregion
 
         private MonthCalendar monthCalendar1;
-        private DataGridView dataGridView1;
         private Button button1;
         private Panel panel1;
         private Button button2;
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
+        private DataGridView dataGridView1;
     }
 }
