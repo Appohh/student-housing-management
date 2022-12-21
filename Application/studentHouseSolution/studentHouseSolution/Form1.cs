@@ -31,7 +31,7 @@ namespace studentHouseSolution
         public Form1()
         {
             InitializeComponent();
-            Task tasks = new Task();
+            taskDatabase tasks = new taskDatabase();
             tasks.Read();
             if (tasks.getTasks().Rows.Count > 0)
             {
