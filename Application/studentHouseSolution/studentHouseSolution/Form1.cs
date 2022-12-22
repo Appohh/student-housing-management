@@ -32,10 +32,14 @@ namespace studentHouseSolution
         {
             InitializeComponent();
             taskDatabase tasks = new taskDatabase();
-            tasks.Read();
-            if (tasks.getTasks().Rows.Count > 0)
+            tasks.getData();
+
+            if (tasks.getTasks().Count > 0)
             {
-                dataGridView1.DataSource = tasks.getTasks();
+                foreach(var task in tasks.getTasks())
+                {
+                    addTaskLabel(task.name, task.description, task.dueDate, task.status.ToString());
+                }
             }
 
         }
@@ -110,17 +114,18 @@ namespace studentHouseSolution
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+
+        public void addTaskLabel(string title, string description, string duedate, string status)
         {
             Label lbl = new Label();
-            lbl.Text = "Clean Trash\r\n\r\nfdsagdsagdsag gfsdgfdsg g fdsgfdsg sgsfdg \r\ngfsdgdsf gfsdg gfsdgfsdg gfsdgfsd gfsd\r\ngfsdgsd gfsdgfsd\r\n\r\nDue date: 12/3/2000\r\n\r\nStatus: To do\r\n";
-            lbl.BackColor = Color.DodgerBlue;
+            lbl.Text = title + "\r\n\r\n" + description + "\r\n\r\nDue date: " + duedate +"\r\n\r\nStatus: " + status + "\r\n";
+            lbl.BackColor = Color.RoyalBlue;
             lbl.Font = new Font("ROG Fonts", 12);
             lbl.AutoSize = false;
             lbl.Size = new Size(614, 289);
             lbl.Margin = new Padding(10);
             flowLayoutPanel1.Controls.Add(lbl);
-
 
         }
     }

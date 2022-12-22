@@ -14,18 +14,22 @@ namespace studentHouseSolution
     {
         private readonly string connectionString;
 
+        //this will be the "current" command string for parent classes:
         protected virtual string readCmd { get; }
 
         public DbConnection()
         {
+            //?? encrypt? ??
             connectionString = "Server = db4free.net; Database = studenthousing; Uid = studenthousing; Pwd = studenthousing;";
         }
 
-        protected MySqlConnection getConnection()
+        //function to get new db connection
+        private MySqlConnection getConnection()
         {
             return new MySqlConnection(connectionString);
         }
 
+        //function to get task rows from db as datatable:
         protected DataTable ReadTable()
         {
             DataTable result = new DataTable();
@@ -38,6 +42,7 @@ namespace studentHouseSolution
                     //Get task rows
                     command.CommandText = this.readCmd;
                     var data = command.ExecuteReader();
+                    //fill datatable with querried data
                     result.Load(data);
                 }
             }

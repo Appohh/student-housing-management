@@ -14,8 +14,12 @@ namespace studentHouseSolution
     public class taskDatabase : DbConnection
     {
         public string? cmd;
-        private DataTable DtTasks = new DataTable();
+        //private DataTable DtTasks = new DataTable();
+
+        //All task objects will be stored in this list:
         private List<Task> Tasks = new List<Task>();
+
+        //override command to get rows from database table
         protected override string readCmd
         {
             get
@@ -24,31 +28,26 @@ namespace studentHouseSolution
             }
         }
 
-        public void ReadAll()
+        public void getData()
         {
+            //clear objects so there will be no duplicates:
+            this.Tasks.Clear();
 
-            
+            //get table from database
+            DataTable table = ReadTable();
 
-           
-
-        }
-
-        List<Task> getData()
-        {
-            DataTable table = this.ReadTable();
-            List<Task> result = new List<Task>();
-            foreach(DataRow dr in table)
+            //itterate trough all rows of given database -> datatable
+            foreach (DataRow dr in table.Rows)
             {
-                result.Add(new Task(dr[0], ...));
+                Tasks.Add(new Task(Convert.ToInt32(dr["Id"]), dr["Name"].ToString(), dr["Description"].ToString(), dr["DueDate"].ToString(), dr["StartDate"].ToString(), Convert.ToInt32(dr["Cycle"]), Convert.ToInt32(dr["PersonId"]), Convert.ToInt32(dr["Status"]), dr["Timestamp"].ToString()));
             }
-
-            return result;
         }
 
-        public DataTable getTasks()
+        //return all task-row objects
+        public List<Task> getTasks()
         {
-            return this.DtTasks;
+            return Tasks;
         }
-
+   
     }
 }
