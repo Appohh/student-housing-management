@@ -26,7 +26,7 @@ namespace studentHouseSolution
         static int currentYear = currentDT.Year;
         static int currentMonth = currentDT.Month;
         //Link selected date with SQL 
-        string selected_date = Form1.static_month + "/" + UserControlDays.static_days + "/" + Form1.static_year;
+        string selected_date = Form1.static_month + "/" + UserControlDays.staticDays + "/" + Form1.static_year;
         public static string date1 = "";
         
         public static int static_month , static_year;
@@ -46,7 +46,7 @@ namespace studentHouseSolution
             tasks.Read();
             if (tasks.getTasks().Rows.Count > 0)
             {
-                dataGridView1.DataSource = tasks.getTasks();
+                /// dataGridView1.DataSource = tasks.getTasks();
             }
 
         }
@@ -62,7 +62,7 @@ namespace studentHouseSolution
         {
 
 
-            string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
+            //string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
 
 
             try
@@ -76,7 +76,7 @@ namespace studentHouseSolution
                 {
                     con.Open();
                     cmd = "select * from tbl_task where date = '@date'";
-                    command.Parameters.Add(new MySqlParameter("@date", date));
+                    // command.Parameters.Add(new MySqlParameter("@date", date));
 
 
                     MySqlDataAdapter da = new MySqlDataAdapter(cmd, con);
@@ -85,7 +85,7 @@ namespace studentHouseSolution
 
                     if (dt.Rows.Count > 0)
                     {
-                        dataGridView1.DataSource = dt;
+                        // dataGridView1.DataSource = dt;
                         con.Close();
                     }
                 }
@@ -135,17 +135,18 @@ namespace studentHouseSolution
             lbl.AutoSize = false;
             lbl.Size = new Size(614, 289);
             lbl.Margin = new Padding(10);
-            flowLayoutPanel1.Controls.Add(lbl);
+            //flowLayoutPanel1.Controls.Add(lbl);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Call function to create and load panels
             displayDays();
 
         }
         private void displayDays()
         {
-            
+           //Create and load panels 
 
             DateTime now = DateTime.Now;
             string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(currentMonth);

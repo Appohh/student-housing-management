@@ -12,7 +12,7 @@ namespace studentHouseSolution
 {
     public partial class UserControlDays : UserControl
     {
-        public static string static_days;
+        public static string staticDays;
         
 
 
@@ -28,12 +28,14 @@ namespace studentHouseSolution
 
         private void UserControlDays_Click(object sender, EventArgs e)
         {
-            static_days = lbdays.Text;
+            staticDays = lbdays.Text;
             //EventForm eventForm = new EventForm();
             //eventForm.Show();
-            Form1.date1 = Form1.static_month + "/" + UserControlDays.static_days + "/" + Form1.static_year;
-            
-             
+
+            Form1 parent = (Form1)this.Parent.Parent;
+
+            Form1.date1 = Form1.static_month + "/" + UserControlDays.staticDays + "/" + Form1.static_year;
+            parent.changeDateTxt(Form1.date1);
         }
 
         private void UserControlDays_Load(object sender, EventArgs e)

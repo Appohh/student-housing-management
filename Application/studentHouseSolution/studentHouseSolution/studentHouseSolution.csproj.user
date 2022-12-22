@@ -10,9 +10,6 @@
     <Compile Update="CSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EventForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

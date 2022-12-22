@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.daycontainer = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_next = new System.Windows.Forms.Button();
             this.btn_previous = new System.Windows.Forms.Button();
@@ -47,85 +40,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Lbl_Date = new System.Windows.Forms.Label();
             this.txt_selected = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.monthCalendar1.Location = new System.Drawing.Point(2718, 8);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(19, 18, 19, 18);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.TitleForeColor = System.Drawing.SystemColors.Highlight;
-            this.monthCalendar1.TrailingForeColor = System.Drawing.Color.Blue;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(2625, 514);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 59);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(2658, 695);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 482);
-            this.panel1.TabIndex = 3;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(852, 531);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(340, 352);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(2658, 460);
-            this.button2.Margin = new System.Windows.Forms.Padding(6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 59);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(2671, 91);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1090, 363);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Clean Trash\r\n\r\nfdsagdsagdsag gfsdgfdsg g fdsgfdsg sgsfdg \r\ngfsdgdsf gfsdg gfsdgfs" +
-    "dg gfsdgfsd gfsd\r\ngfsdgsd gfsdgfsd\r\n\r\nDue date: 12/3/2000\r\n\r\nStatus: To do";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeight = 29;
-            this.dataGridView1.Location = new System.Drawing.Point(2687, 245);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1636, 385);
-            this.dataGridView1.TabIndex = 1;
             // 
             // daycontainer
             // 
@@ -238,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3107, 1207);
+            this.ClientSize = new System.Drawing.Size(1915, 1207);
             this.Controls.Add(this.txt_selected);
             this.Controls.Add(this.Lbl_Date);
             this.Controls.Add(this.label8);
@@ -251,34 +166,18 @@
             this.Controls.Add(this.btn_previous);
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.daycontainer);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.monthCalendar1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MonthCalendar monthCalendar1;
-        private Button button1;
-        private Panel panel1;
-        private Button button2;
-        private Label label1;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private DataGridView dataGridView1;
         private FlowLayoutPanel daycontainer;
         private Button btn_next;
         private Button btn_previous;
