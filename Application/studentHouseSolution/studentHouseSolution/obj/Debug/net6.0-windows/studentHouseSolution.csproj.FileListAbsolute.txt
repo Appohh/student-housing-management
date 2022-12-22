@@ -59,3 +59,10 @@ C:\Users\alpay\Dev_projects\student-housing-solution\Application\studentHouseSol
 C:\Users\alpay\Dev_projects\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\MySql.Data.dll
 C:\Users\alpay\Dev_projects\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\ZstdNet.dll
 C:\Users\alpay\Dev_projects\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Feynman\Desktop\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\Feynman\Desktop\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Feynman\Desktop\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Feynman\Desktop\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Feynman\Desktop\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\Feynman\Desktop\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\ZstdNet.dll
+C:\Users\Feynman\Desktop\student-housing-solution\Application\studentHouseSolution\studentHouseSolution\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll

@@ -39,7 +39,9 @@ namespace studentHouseSolution
             //itterate trough all rows of given database -> datatable
             foreach (DataRow dr in table.Rows)
             {
-                Tasks.Add(new Task(Convert.ToInt32(dr["Id"]), dr["Name"].ToString(), dr["Description"].ToString(), dr["DueDate"].ToString(), dr["StartDate"].ToString(), Convert.ToInt32(dr["Cycle"]), Convert.ToInt32(dr["PersonId"]), Convert.ToInt32(dr["Status"]), dr["Timestamp"].ToString()));
+                Tasks.Add(new Task(Convert.ToInt32(dr["Id"]), dr["Name"].ToString(), dr["Description"].ToString(),
+                    dr["DueDate"].ToString(), dr["StartDate"].ToString(), Convert.ToInt32(dr["Cycle"]),
+                    Convert.ToInt32(dr["PersonId"]), Convert.ToInt32(dr["Status"]), dr["Timestamp"].ToString()));
             }
         }
 
