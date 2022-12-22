@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\alpay\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\alpay\\.nuget\\packages"
+      "C:\\Users\\jarno\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\jarno\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
