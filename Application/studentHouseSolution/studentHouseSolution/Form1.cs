@@ -63,7 +63,7 @@ namespace studentHouseSolution
             lbl.AutoSize = false;
             lbl.Size = new Size(614, 289);
             lbl.Margin = new Padding(10);
-            //flowLayoutPanel1.Controls.Add(lbl);
+            flowLayoutPanel1.Controls.Add(lbl);
         }
 
         private void Form1_Load(object sender, EventArgs e)
