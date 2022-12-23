@@ -29,11 +29,14 @@ namespace studentHouseSolution
 
         
 
-        public Form1()
+        public Form1(Person loggedInUser)
         {
             InitializeComponent();
             taskDatabase tasks = new taskDatabase();
             tasks.getData();
+
+            lblLoggedInUser.Text = loggedInUser.firstName + " " + loggedInUser.lastName;
+
 
             if (tasks.getTasks().Count > 0)
             {

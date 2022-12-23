@@ -13,8 +13,6 @@ namespace studentHouseSolution
 {
     public class taskDatabase : DbConnection
     {
-        public string? cmd;
-        //private DataTable DtTasks = new DataTable();
 
         //All task objects will be stored in this list:
         private List<Task> Tasks = new List<Task>();

@@ -41,6 +41,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Lbl_Date = new System.Windows.Forms.Label();
             this.txt_selected = new System.Windows.Forms.TextBox();
+            this.lblLoggedInUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -162,11 +163,24 @@
             this.txt_selected.TabIndex = 17;
             this.txt_selected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lblLoggedInUser
+            // 
+            this.lblLoggedInUser.AutoSize = true;
+            this.lblLoggedInUser.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblLoggedInUser.Font = new System.Drawing.Font("Showcard Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLoggedInUser.ForeColor = System.Drawing.Color.White;
+            this.lblLoggedInUser.Location = new System.Drawing.Point(1297, 26);
+            this.lblLoggedInUser.Name = "lblLoggedInUser";
+            this.lblLoggedInUser.Size = new System.Drawing.Size(54, 23);
+            this.lblLoggedInUser.TabIndex = 18;
+            this.lblLoggedInUser.Text = "User";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 612);
+            this.Controls.Add(this.lblLoggedInUser);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.txt_selected);
             this.Controls.Add(this.Lbl_Date);
@@ -205,5 +219,6 @@
         private Label label8;
         private Label Lbl_Date;
         public TextBox txt_selected;
+        private Label lblLoggedInUser;
     }
 }

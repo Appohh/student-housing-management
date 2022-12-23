@@ -29,7 +29,7 @@ namespace studentHouseSolution
             return new MySqlConnection(connectionString);
         }
 
-        //function to get task rows from db as datatable:
+        //function to get rows from db as datatable:
         protected DataTable ReadTable()
         {
             DataTable result = new DataTable();
@@ -39,7 +39,7 @@ namespace studentHouseSolution
                 using (var command = new MySqlCommand())
                 {
                     command.Connection = connection;
-                    //Get task rows
+                    //Get rows
                     command.CommandText = this.readCmd;
                     var data = command.ExecuteReader();
                     //fill datatable with querried data
