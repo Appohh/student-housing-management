@@ -22,10 +22,10 @@ namespace studentHouseSolution
         static int currentYear = currentDT.Year;
         static int currentMonth = currentDT.Month;
         //Link selected date with SQL 
-        string selected_date = Form1.static_month + "/" + UserControlDays.staticDays + "/" + Form1.static_year;
+        string selectedDate = Form1.staticMonth + "/" + UserControlDays.staticDays + "/" + Form1.staticYear;
         public static string date1 = "";
         
-        public static int static_month , static_year;
+        public static int staticMonth , staticYear;
 
         
 
@@ -81,8 +81,8 @@ namespace studentHouseSolution
             Lbl_Date.Text = monthname + " " + currentYear;
 
 
-            static_month = currentMonth;
-            static_year = currentYear;
+            staticMonth = currentMonth;
+            staticYear = currentYear;
 
             //get the current month and year
             DateTime startofthemonth = new DateTime(currentYear, currentMonth, 1);
@@ -109,8 +109,8 @@ namespace studentHouseSolution
         {
 
             daycontainer.Controls.Clear();
-            static_month = currentMonth;
-            static_year = currentYear;
+            staticMonth = currentMonth;
+            staticYear = currentYear;
 
             if (currentMonth >= 12)
             {
@@ -126,8 +126,8 @@ namespace studentHouseSolution
         private void btn_previous_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();
-            static_month = currentMonth;
-            static_year = currentYear;
+            staticMonth = currentMonth;
+            staticYear = currentYear;
 
             if (currentMonth <= 1)
             {
