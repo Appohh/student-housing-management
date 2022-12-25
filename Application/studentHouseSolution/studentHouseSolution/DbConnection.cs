@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace studentHouseSolution
 {
     //All db connections go trough here
-    public class DbConnection 
+    public class DbConnection
     {
         private readonly string connectionString;
 
@@ -39,8 +39,9 @@ namespace studentHouseSolution
                 using (var command = new MySqlCommand())
                 {
                     command.Connection = connection;
-                    //Get rows
+                    //Get command
                     command.CommandText = this.readCmd;
+                    //Get data
                     var data = command.ExecuteReader();
                     //fill datatable with querried data
                     result.Load(data);
@@ -49,5 +50,22 @@ namespace studentHouseSolution
 
             return result;
         }
+
+        protected void executeQuery(string query)
+        {
+            using (var connection = getConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
     }
 }

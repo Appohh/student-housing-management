@@ -34,7 +34,7 @@ namespace studentHouseSolution
 
             Form1 parent = (Form1)this.Parent.Parent;
 
-            Form1.date1 = Form1.staticMonth + "/" + UserControlDays.staticDays + "/" + Form1.staticYear;
+            Form1.date1 = UserControlDays.staticDays + "-" + Form1.staticMonth + "-" + Form1.staticYear;
             parent.changeDateTxt(Form1.date1);
         }
 

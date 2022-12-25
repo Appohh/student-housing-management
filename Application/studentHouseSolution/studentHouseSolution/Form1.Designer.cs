@@ -42,19 +42,23 @@
             this.Lbl_Date = new System.Windows.Forms.Label();
             this.txt_selected = new System.Windows.Forms.TextBox();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
+            this.btnGetAllTasks = new System.Windows.Forms.Button();
+            this.btnGetMyTasks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(785, 92);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(689, 92);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(562, 502);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(658, 502);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // daycontainer
             // 
+            this.daycontainer.BackColor = System.Drawing.Color.White;
             this.daycontainer.Location = new System.Drawing.Point(25, 128);
             this.daycontainer.Margin = new System.Windows.Forms.Padding(1);
             this.daycontainer.Name = "daycontainer";
@@ -63,6 +67,7 @@
             // 
             // btn_next
             // 
+            this.btn_next.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_next.Location = new System.Drawing.Point(351, 536);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(188, 58);
@@ -73,6 +78,7 @@
             // 
             // btn_previous
             // 
+            this.btn_previous.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_previous.Location = new System.Drawing.Point(25, 536);
             this.btn_previous.Name = "btn_previous";
             this.btn_previous.Size = new System.Drawing.Size(188, 58);
@@ -146,7 +152,9 @@
             // 
             // Lbl_Date
             // 
-            this.Lbl_Date.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Lbl_Date.BackColor = System.Drawing.Color.Transparent;
+            this.Lbl_Date.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.Lbl_Date.ForeColor = System.Drawing.Color.White;
             this.Lbl_Date.Location = new System.Drawing.Point(12, 26);
             this.Lbl_Date.Name = "Lbl_Date";
             this.Lbl_Date.Size = new System.Drawing.Size(545, 57);
@@ -156,12 +164,14 @@
             // 
             // txt_selected
             // 
+            this.txt_selected.Font = new System.Drawing.Font("Showcard Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.txt_selected.Location = new System.Drawing.Point(219, 552);
             this.txt_selected.Name = "txt_selected";
             this.txt_selected.ReadOnly = true;
-            this.txt_selected.Size = new System.Drawing.Size(126, 27);
+            this.txt_selected.Size = new System.Drawing.Size(126, 32);
             this.txt_selected.TabIndex = 17;
             this.txt_selected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_selected.TextChanged += new System.EventHandler(this.txt_selected_TextChanged);
             // 
             // lblLoggedInUser
             // 
@@ -169,17 +179,43 @@
             this.lblLoggedInUser.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblLoggedInUser.Font = new System.Drawing.Font("Showcard Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(1297, 26);
+            this.lblLoggedInUser.Location = new System.Drawing.Point(1207, 26);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
             this.lblLoggedInUser.Size = new System.Drawing.Size(54, 23);
             this.lblLoggedInUser.TabIndex = 18;
             this.lblLoggedInUser.Text = "User";
             // 
+            // btnGetAllTasks
+            // 
+            this.btnGetAllTasks.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnGetAllTasks.Location = new System.Drawing.Point(697, 44);
+            this.btnGetAllTasks.Name = "btnGetAllTasks";
+            this.btnGetAllTasks.Size = new System.Drawing.Size(219, 44);
+            this.btnGetAllTasks.TabIndex = 19;
+            this.btnGetAllTasks.Text = "Get all tasks";
+            this.btnGetAllTasks.UseVisualStyleBackColor = true;
+            this.btnGetAllTasks.Click += new System.EventHandler(this.btnGetAllTasks_Click);
+            // 
+            // btnGetMyTasks
+            // 
+            this.btnGetMyTasks.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnGetMyTasks.Location = new System.Drawing.Point(922, 44);
+            this.btnGetMyTasks.Name = "btnGetMyTasks";
+            this.btnGetMyTasks.Size = new System.Drawing.Size(250, 44);
+            this.btnGetMyTasks.TabIndex = 20;
+            this.btnGetMyTasks.Text = "Get all my tasks";
+            this.btnGetMyTasks.UseVisualStyleBackColor = true;
+            this.btnGetMyTasks.Click += new System.EventHandler(this.btnGetMyTasks_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::studentHouseSolution.Properties.Resources._70Z_1409_B_Blur_P2_HTp;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1378, 612);
+            this.Controls.Add(this.btnGetMyTasks);
+            this.Controls.Add(this.btnGetAllTasks);
             this.Controls.Add(this.lblLoggedInUser);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.txt_selected);
@@ -198,7 +234,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,5 +256,7 @@
         private Label Lbl_Date;
         public TextBox txt_selected;
         private Label lblLoggedInUser;
+        private Button btnGetAllTasks;
+        private Button btnGetMyTasks;
     }
 }

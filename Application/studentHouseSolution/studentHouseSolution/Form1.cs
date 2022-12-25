@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 
 namespace studentHouseSolution
@@ -21,30 +22,26 @@ namespace studentHouseSolution
         static DateTime currentDT = DateTime.Now;
         static int currentYear = currentDT.Year;
         static int currentMonth = currentDT.Month;
-        //Link selected date with SQL 
         string selectedDate = Form1.staticMonth + "/" + UserControlDays.staticDays + "/" + Form1.staticYear;
         public static string date1 = "";
         
         public static int staticMonth , staticYear;
+        taskDatabase tasks = new taskDatabase();
+        personDatabase persons = new personDatabase();
+        Person loggedInUser;
 
-        
 
-        public Form1(Person loggedInUser)
+
+        public Form1(Person userLoggedIn)
         {
             InitializeComponent();
-            taskDatabase tasks = new taskDatabase();
             tasks.getData();
-
+            persons.getData();
+            loggedInUser = userLoggedIn;
             lblLoggedInUser.Text = loggedInUser.firstName + " " + loggedInUser.lastName;
 
 
-            if (tasks.getTasks().Count > 0)
-            {
-                foreach(var task in tasks.getTasks())
-                {
-                    addTaskLabel(task.name, task.description, task.dueDate, task.status.ToString());
-                }
-            }
+            showAllTasks();
 
         }
 
@@ -53,21 +50,79 @@ namespace studentHouseSolution
            txt_selected.Text = date;
         }
 
-    
-
-
-
-        public void addTaskLabel(string title, string description, string duedate, string status)
+        public void showAllTasks()
         {
+            flowLayoutPanel1.Controls.Clear();
+            if (tasks.getTasks().Count > 0)
+            {
+                foreach (var task in tasks.getTasks())
+                {
+                    //get name of personid
+                    string personName = "";
+                    foreach (var person in persons.getPersons())
+                    {
+                        if (task.personId == person.id) { personName = person.firstName + " " + person.lastName; }
+                    }
+
+                    //add label to flowpanelview
+                    addTaskLabel(task.id, task.name, task.description, task.dueDate, personName, task.status);
+                }
+            }
+        }
+
+
+
+        public void addTaskLabel(int taskId, string title, string description, string duedate, string person, int status)
+        {
+            //set user friendly text for status tiny-int
+            string statusText = "";
+                if ( status == 0) { statusText = "Not done"; } else if (status == 1) { statusText = "Done"; }
+
+            //add new label
             Label lbl = new Label();
-            lbl.Text = title + "\r\n\r\n" + description + "\r\n\r\nDue date: " + duedate +"\r\n\r\nStatus: " + status + "\r\n";
+            lbl.Text = title + "\r\n\r\n" + description + "\r\n\r\nDue date: " + duedate +"\r\n\r\n Person: " + person +"\r\n\r\nStatus: " + statusText + "\r\n";
             lbl.BackColor = Color.RoyalBlue;
             lbl.Font = new Font("ROG Fonts", 12);
+            lbl.ForeColor = Color.White;
             lbl.AutoSize = false;
             lbl.Size = new Size(614, 289);
             lbl.Margin = new Padding(10);
+
+            //if status == 0 make button to check the task
+            if (status == 0)
+            {
+                Button btn = new Button();
+                btn.Name = "tester";
+                btn.Location = new Point(0, 250);
+                btn.BackColor = Color.White;
+                btn.Size = new Size(150, 30);
+                btn.Text = "Check";
+                btn.ForeColor = Color.Black;
+                //add to label
+                lbl.Controls.Add(btn);
+                //set a tag to send value
+                btn.Tag = taskId.ToString();
+                //add new evenhandler as panelbtn_click so we can handle click
+                btn.Click += new EventHandler(panelBtn_Click);
+                
+            }
+            //add whole label to flowlayoutpanel
             flowLayoutPanel1.Controls.Add(lbl);
         }
+
+        private void panelBtn_Click(object sender, EventArgs e)
+        {
+            //set specific clicked button:
+            Button btn = (Button)sender;
+            //check task in db
+            try { tasks.checkTask(btn.Tag.ToString()); MessageBox.Show("Check ;)");  } catch { MessageBox.Show("Something went wrong, try again another time or contact an admin."); }
+            //refresh object data
+            tasks.getData();
+            //refresh task list
+            showAllTasks();
+            
+        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -124,6 +179,54 @@ namespace studentHouseSolution
             
             displayDays();
            
+        }
+
+        private void btnGetAllTasks_Click(object sender, EventArgs e)
+        {
+            showAllTasks();
+
+        }
+
+        private void btnGetMyTasks_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            if (tasks.getTasks().Count > 0)
+            {
+                foreach (var task in tasks.getTasks())
+                {
+
+                    if (task.personId == loggedInUser.id)
+                    {
+                        addTaskLabel(task.id, task.name, task.description, task.dueDate, loggedInUser.firstName + " " + loggedInUser.lastName, task.status); ;
+                    }
+                }
+            }
+
+        }
+
+        //specific date click -> show date specific tasks:
+        private void txt_selected_TextChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            if (tasks.getTasks().Count > 0)
+            {
+                foreach (var task in tasks.getTasks())
+                {
+                    //dd-mm-yy hh-mm-ss -> dd-mm-yy
+                    if (task.dueDate.Substring(0,10) == txt_selected.Text)
+                    {
+                        string personName = "";
+                        foreach (var person in persons.getPersons())
+                        {
+                            if (task.personId == person.id) { personName = person.firstName + " " + person.lastName; }
+                        }
+
+
+                        addTaskLabel(task.id, task.name, task.description, task.dueDate, personName, task.status);
+                    }
+                }
+            }
+
         }
 
         private void btn_previous_Click(object sender, EventArgs e)

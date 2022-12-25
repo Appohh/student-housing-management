@@ -36,12 +36,9 @@ namespace studentHouseSolution
                     this.Close();
 
                 } 
-                else
-                {
-                    MessageBox.Show("Login not correct");
-                }
 
             }
+            MessageBox.Show("Login not correct");
 
         }
     }

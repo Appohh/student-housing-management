@@ -43,6 +43,12 @@ namespace studentHouseSolution
             }
         }
 
+        public void checkTask(string id)
+        {
+            string query = "UPDATE Task SET Status = 1 where Id = " + id;
+            executeQuery(query);
+        }
+
         //return all task-row objects
         public List<Task> getTasks()
         {
