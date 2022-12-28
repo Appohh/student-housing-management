@@ -32,10 +32,10 @@ namespace studentHouseSolution
             //EventForm eventForm = new EventForm();
             //eventForm.Show();
 
-            Form1 parent = (Form1)this.Parent.Parent;
+            Dashboard parent = (Dashboard)this.Parent.Parent;
 
-            Form1.date1 = UserControlDays.staticDays + "-" + Form1.staticMonth + "-" + Form1.staticYear;
-            parent.changeDateTxt(Form1.date1);
+            Dashboard.date1 = UserControlDays.staticDays + "-" + Dashboard.staticMonth + "-" + Dashboard.staticYear;
+            parent.changeDateTxt(Dashboard.date1);
         }
 
         private void UserControlDays_Load(object sender, EventArgs e)

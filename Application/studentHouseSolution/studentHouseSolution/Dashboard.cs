@@ -15,14 +15,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace studentHouseSolution
 {
-    public partial class Form1 : Form
+    public partial class Dashboard : Form
     {
 
         //get current date
         static DateTime currentDT = DateTime.Now;
         static int currentYear = currentDT.Year;
         static int currentMonth = currentDT.Month;
-        string selectedDate = Form1.staticMonth + "/" + UserControlDays.staticDays + "/" + Form1.staticYear;
+        string selectedDate = Dashboard.staticMonth + "/" + UserControlDays.staticDays + "/" + Dashboard.staticYear;
         public static string date1 = "";
         
         public static int staticMonth , staticYear;
@@ -32,7 +32,7 @@ namespace studentHouseSolution
 
 
 
-        public Form1(Person userLoggedIn)
+        public Dashboard(Person userLoggedIn)
         {
             InitializeComponent();
             tasks.getData();
@@ -65,14 +65,14 @@ namespace studentHouseSolution
                     }
 
                     //add label to flowpanelview
-                    addTaskLabel(task.id, task.name, task.description, task.dueDate, personName, task.status);
+                    addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personName, task.status);
                 }
             }
         }
 
 
 
-        public void addTaskLabel(int taskId, string title, string description, string duedate, string person, int status)
+        public void addTaskLabel(int taskId, string title, string description, string startdate, string duedate, string person, int status)
         {
             //set user friendly text for status tiny-int
             string statusText = "";
@@ -80,12 +80,12 @@ namespace studentHouseSolution
 
             //add new label
             Label lbl = new Label();
-            lbl.Text = title + "\r\n\r\n" + description + "\r\n\r\nDue date: " + duedate +"\r\n\r\n Person: " + person +"\r\n\r\nStatus: " + statusText + "\r\n";
+            lbl.Text = title + "\r\n\r\n" + description + "\r\n\r\nStartdate : " + startdate.Substring(0,10) + "\r\n\r\nDue date: " + duedate + "\r\n\r\nPerson: " + person +"\r\n\r\nStatus: " + statusText + "\r\n\r\n:)";
             lbl.BackColor = Color.RoyalBlue;
             lbl.Font = new Font("ROG Fonts", 12);
             lbl.ForeColor = Color.White;
             lbl.AutoSize = false;
-            lbl.Size = new Size(614, 289);
+            lbl.Size = new Size(614, 340);
             lbl.Margin = new Padding(10);
 
             //if status == 0 make button to check the task
@@ -93,7 +93,7 @@ namespace studentHouseSolution
             {
                 Button btn = new Button();
                 btn.Name = "tester";
-                btn.Location = new Point(0, 250);
+                btn.Location = new Point(0, 305);
                 btn.BackColor = Color.White;
                 btn.Size = new Size(150, 30);
                 btn.Text = "Check";
@@ -197,7 +197,7 @@ namespace studentHouseSolution
 
                     if (task.personId == loggedInUser.id)
                     {
-                        addTaskLabel(task.id, task.name, task.description, task.dueDate, loggedInUser.firstName + " " + loggedInUser.lastName, task.status); ;
+                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, loggedInUser.firstName + " " + loggedInUser.lastName, task.status); ;
                     }
                 }
             }
@@ -222,7 +222,7 @@ namespace studentHouseSolution
                         }
 
 
-                        addTaskLabel(task.id, task.name, task.description, task.dueDate, personName, task.status);
+                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personName, task.status);
                     }
                 }
             }

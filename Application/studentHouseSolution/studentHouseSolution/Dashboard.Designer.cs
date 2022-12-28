@@ -1,6 +1,6 @@
 ﻿namespace studentHouseSolution
 {
-    partial class Form1
+    partial class Dashboard
     {
         /// <summary>
         ///  Required designer variable.
@@ -49,16 +49,16 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(689, 92);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(658, 502);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(660, 502);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // daycontainer
             // 
-            this.daycontainer.BackColor = System.Drawing.Color.White;
+            this.daycontainer.BackColor = System.Drawing.Color.Gainsboro;
             this.daycontainer.Location = new System.Drawing.Point(25, 128);
             this.daycontainer.Margin = new System.Windows.Forms.Padding(1);
             this.daycontainer.Name = "daycontainer";
@@ -67,29 +67,32 @@
             // 
             // btn_next
             // 
+            this.btn_next.BackColor = System.Drawing.Color.Gainsboro;
             this.btn_next.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_next.Location = new System.Drawing.Point(351, 536);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(188, 58);
             this.btn_next.TabIndex = 7;
             this.btn_next.Text = "Next";
-            this.btn_next.UseVisualStyleBackColor = true;
+            this.btn_next.UseVisualStyleBackColor = false;
             this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
             // btn_previous
             // 
+            this.btn_previous.BackColor = System.Drawing.Color.Gainsboro;
             this.btn_previous.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_previous.Location = new System.Drawing.Point(25, 536);
             this.btn_previous.Name = "btn_previous";
             this.btn_previous.Size = new System.Drawing.Size(188, 58);
             this.btn_previous.TabIndex = 8;
             this.btn_previous.Text = "Previous";
-            this.btn_previous.UseVisualStyleBackColor = true;
+            this.btn_previous.UseVisualStyleBackColor = false;
             this.btn_previous.Click += new System.EventHandler(this.btn_previous_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(25, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 20);
@@ -99,6 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Gainsboro;
             this.label3.Location = new System.Drawing.Point(94, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
@@ -108,6 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Gainsboro;
             this.label4.Location = new System.Drawing.Point(254, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 20);
@@ -117,6 +122,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.Location = new System.Drawing.Point(163, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 20);
@@ -126,6 +132,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Gainsboro;
             this.label6.Location = new System.Drawing.Point(383, 92);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 20);
@@ -135,6 +142,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Gainsboro;
             this.label7.Location = new System.Drawing.Point(328, 92);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 20);
@@ -144,6 +152,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Gainsboro;
             this.label8.Location = new System.Drawing.Point(456, 92);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 20);
@@ -164,6 +173,7 @@
             // 
             // txt_selected
             // 
+            this.txt_selected.BackColor = System.Drawing.Color.Gainsboro;
             this.txt_selected.Font = new System.Drawing.Font("Showcard Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.txt_selected.Location = new System.Drawing.Point(219, 552);
             this.txt_selected.Name = "txt_selected";
@@ -187,24 +197,26 @@
             // 
             // btnGetAllTasks
             // 
+            this.btnGetAllTasks.BackColor = System.Drawing.Color.Gainsboro;
             this.btnGetAllTasks.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnGetAllTasks.Location = new System.Drawing.Point(697, 44);
             this.btnGetAllTasks.Name = "btnGetAllTasks";
             this.btnGetAllTasks.Size = new System.Drawing.Size(219, 44);
             this.btnGetAllTasks.TabIndex = 19;
             this.btnGetAllTasks.Text = "Get all tasks";
-            this.btnGetAllTasks.UseVisualStyleBackColor = true;
+            this.btnGetAllTasks.UseVisualStyleBackColor = false;
             this.btnGetAllTasks.Click += new System.EventHandler(this.btnGetAllTasks_Click);
             // 
             // btnGetMyTasks
             // 
+            this.btnGetMyTasks.BackColor = System.Drawing.Color.Gainsboro;
             this.btnGetMyTasks.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnGetMyTasks.Location = new System.Drawing.Point(922, 44);
             this.btnGetMyTasks.Name = "btnGetMyTasks";
             this.btnGetMyTasks.Size = new System.Drawing.Size(250, 44);
             this.btnGetMyTasks.TabIndex = 20;
             this.btnGetMyTasks.Text = "Get all my tasks";
-            this.btnGetMyTasks.UseVisualStyleBackColor = true;
+            this.btnGetMyTasks.UseVisualStyleBackColor = false;
             this.btnGetMyTasks.Click += new System.EventHandler(this.btnGetMyTasks_Click);
             // 
             // Form1

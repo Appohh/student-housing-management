@@ -29,11 +29,25 @@ namespace studentHouseSolution
             {
                 if (person.email == email && person.passwordHash == password)
                 {
-                    MessageBox.Show("Login succes");
-                    this.Hide();
-                    Form1 f1 = new Form1(person);
-                    f1.ShowDialog();
-                    this.Close();
+                    if (person.role == 0)
+                    {
+                        MessageBox.Show("Login succes, welcome " + person.firstName + " " + person.lastName + "!");
+                        this.Hide();
+                        Dashboard f1 = new Dashboard(person);
+                        f1.ShowDialog();
+                        this.Close();
+                    }
+                    else if (person.role == 1)
+                    {
+                        MessageBox.Show("Login succes, welcome master " + person.firstName + " " + person.lastName + "!");
+                        this.Hide();
+                        Admin f1 = new Admin(person);
+                        f1.ShowDialog();
+                        this.Close();
+                    } else
+                    {
+                        MessageBox.Show("Something went wrong, please contact an admin or try again.");
+                    }
 
                 } 
 
