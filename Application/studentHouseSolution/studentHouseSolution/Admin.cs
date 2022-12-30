@@ -15,20 +15,51 @@ namespace studentHouseSolution
         Person loggedInUser;
         taskDatabase tasks = new taskDatabase();
         personDatabase persons = new personDatabase();
+        bool toggleRegister = true;
+        bool toggleCreateTask = true;
+
         public Admin(Person userLoggedIn)
         {
             InitializeComponent();
 
             tasks.getData();
             persons.getData();
-            loggedInUser = userLoggedIn;   
+            loggedInUser = userLoggedIn;
+            cbPerson.DataSource = persons.getPersons();
+            cbPerson.DisplayMember = "firstName";
+            cbPerson.ValueMember = "id";
+        }
+
+        //give collection of controls and toggle the visibility with the given value, reverse is the control that gets text
+        public void toggleVisibility(bool visible, List<Control> elements, Control? reverse = null, string? controltext = null)
+        {
+            foreach (var element in elements)
+            {
+                element.Visible = visible;
+            }
+
+            if (reverse != null && controltext != null)
+            {
+                reverse.Text = controltext;
+            }
+
         }
 
         private void btnShowRegister_Click(object sender, EventArgs e)
         {
+            var controls = new List<Control> { txtFirstName, txtLastName, txtEmail, txtPassword, cbAdmin, btnRegister};
+
             //show and hide right fields
-            txtFirstName.Visible = true;txtLastName.Visible = true;txtEmail.Visible = true;txtPassword.Visible = true; cbAdmin.Visible = true;
-            btnShowRegister.Visible = false;
+            if (toggleRegister)
+            {
+                toggleVisibility(true, controls, btnShowRegister, "Cancel registering");
+                toggleRegister = false;
+            }
+            else if (!toggleRegister)
+            {
+                toggleVisibility(false, controls, btnShowRegister, "Register new user");
+                toggleRegister = true;
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -56,6 +87,23 @@ namespace studentHouseSolution
             }
 
 
+        }
+
+        private void btnShowTaskCreate_Click(object sender, EventArgs e)
+        {
+            var controls = new List<Control> { btnCreateTask, txtName, txtDescription, lblCycle, lblDueDate, lblPerson, lblStartDate, dtpStartDate, dtpDueDate, nudCycle, cbPerson };
+
+            //show and hide right fields
+            if (toggleCreateTask)
+            {
+                toggleVisibility(true, controls, btnShowTaskCreate, "Cancel task creation");
+                toggleCreateTask = false;
+            }
+            else if (!toggleCreateTask)
+            {
+                toggleVisibility(false, controls, btnShowTaskCreate, "Create new task");
+                toggleCreateTask = true;
+            }
         }
     }
 }
