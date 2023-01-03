@@ -64,6 +64,8 @@ namespace studentHouseSolution
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            var controls = new List<Control> { txtFirstName, txtLastName, txtEmail, txtPassword, cbAdmin, btnRegister };
+
             int role = 0;
             if (string.IsNullOrEmpty(txtFirstName.Text))  { MessageBox.Show("Please fill in your firstname!"); return; }
             if (string.IsNullOrEmpty(txtLastName.Text)) { MessageBox.Show("Please fill in your lastname!"); return; }
@@ -78,8 +80,7 @@ namespace studentHouseSolution
                 txtFirstName.Text = "";txtLastName.Text = "";txtEmail.Text = "";txtPassword.Text = "";
 
                 //show and hide right fields
-                txtFirstName.Visible = false; txtLastName.Visible = false; txtEmail.Visible = false; txtPassword.Visible = false; cbAdmin.Visible = false; 
-                btnShowRegister.Visible = true;
+                toggleVisibility(false, controls, btnShowRegister, "Register new user");
                 persons.getData();
             } else //if unsuccesful
             {
@@ -104,6 +105,42 @@ namespace studentHouseSolution
                 toggleVisibility(false, controls, btnShowTaskCreate, "Create new task");
                 toggleCreateTask = true;
             }
+        }
+
+        private void btnCreateTask_Click(object sender, EventArgs e)
+        {
+            var controls = new List<Control> { btnCreateTask, txtName, txtDescription, lblCycle, lblDueDate, lblPerson, lblStartDate, dtpStartDate, dtpDueDate, nudCycle, cbPerson };
+
+            if (string.IsNullOrEmpty(txtName.Text)) { MessageBox.Show("Please fill in Name!"); return; }
+            if (string.IsNullOrEmpty(txtDescription.Text)) { MessageBox.Show("Please fill in Description!"); return; }
+            if (dtpDueDate.Value < DateTime.Now) { MessageBox.Show("Duedate cannot be in the past or today!"); return; }
+            if (dtpDueDate.Value < dtpStartDate.Value) { MessageBox.Show("Duedate cannot be before startdate!"); return; }
+            if (cbPerson.SelectedValue == null) { MessageBox.Show("Choose a person of the list!"); return; }
+            if (nudCycle == null) { MessageBox.Show("Enter number of days to cycle!"); return; }
+
+            //format dates for db
+            DateTime startdateSource = DateTime.Parse(dtpStartDate.Value.ToString());
+            string startdateFormat = startdateSource.ToString("yyyy-MM-dd");
+            DateTime duedateSource = DateTime.Parse(dtpDueDate.Value.ToString());
+            string duedateFormat = duedateSource.ToString("yyyy-MM-dd");
+
+            //if succesful
+            if (tasks.createNewTask(txtName.Text, txtDescription.Text, startdateFormat, duedateFormat, nudCycle.Value.ToString(), cbPerson.SelectedValue.ToString()) > 0)
+            {
+                MessageBox.Show("Task " + txtName.Text + " created succesfuly between " + startdateFormat + " and " + duedateFormat + "!");
+                txtName.Text = ""; txtDescription.Text = ""; nudCycle.Value = 0;
+
+                //show and hide right fields
+                toggleVisibility(false, controls, btnShowTaskCreate, "Create new task");
+                tasks.getData();
+            }
+            else //if unsuccesful
+            {
+                MessageBox.Show("Something went wrong while communicating trough database.");
+            }
+
+
+           
         }
     }
 }

@@ -141,6 +141,7 @@
             this.btnCreateTask.Text = "Submit";
             this.btnCreateTask.UseVisualStyleBackColor = true;
             this.btnCreateTask.Visible = false;
+            this.btnCreateTask.Click += new System.EventHandler(this.btnCreateTask_Click);
             // 
             // txtDescription
             // 

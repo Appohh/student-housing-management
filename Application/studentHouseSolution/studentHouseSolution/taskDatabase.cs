@@ -43,6 +43,12 @@ namespace studentHouseSolution
             }
         }
 
+        public int createNewTask(string name, string description, string startdate, string duedate, string cycle, string personid)
+        {
+            string query = $"INSERT INTO `Task` (`Name`, `Description`, `StartDate`, `DueDate`, `Cycle`, `PersonId`) VALUES ('{name}', '{description}', '{startdate}', '{duedate}', '{cycle}', '{personid}');";
+            return executeQuery(query);
+        }
+
         public void checkTask(string id)
         {
             string query = "UPDATE Task SET Status = 1 where Id = " + id;
