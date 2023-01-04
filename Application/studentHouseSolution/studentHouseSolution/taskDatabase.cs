@@ -49,6 +49,12 @@ namespace studentHouseSolution
             return executeQuery(query);
         }
 
+        public int deleteTask(string id)
+        {
+            string query = "DELETE FROM Task where Id = " + id;
+            return executeQuery(query);
+        }
+
         public void checkTask(string id)
         {
             string query = "UPDATE Task SET Status = 1 where Id = " + id;

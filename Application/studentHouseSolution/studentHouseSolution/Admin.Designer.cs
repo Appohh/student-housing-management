@@ -47,6 +47,10 @@
             this.lblCycle = new System.Windows.Forms.Label();
             this.cbPerson = new System.Windows.Forms.ComboBox();
             this.lblPerson = new System.Windows.Forms.Label();
+            this.cbTasks = new System.Windows.Forms.ComboBox();
+            this.btnDeleteTask = new System.Windows.Forms.Button();
+            this.btnDeletePerson = new System.Windows.Forms.Button();
+            this.cbPersonPerson = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCycle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +111,7 @@
             this.btnShowRegister.Name = "btnShowRegister";
             this.btnShowRegister.Size = new System.Drawing.Size(142, 29);
             this.btnShowRegister.TabIndex = 6;
-            this.btnShowRegister.Text = "Register new user";
+            this.btnShowRegister.Text = "Person tools";
             this.btnShowRegister.UseVisualStyleBackColor = true;
             this.btnShowRegister.Click += new System.EventHandler(this.btnShowRegister_Click);
             // 
@@ -128,7 +132,7 @@
             this.btnShowTaskCreate.Name = "btnShowTaskCreate";
             this.btnShowTaskCreate.Size = new System.Drawing.Size(142, 29);
             this.btnShowTaskCreate.TabIndex = 14;
-            this.btnShowTaskCreate.Text = "Create new task";
+            this.btnShowTaskCreate.Text = "Task tools";
             this.btnShowTaskCreate.UseVisualStyleBackColor = true;
             this.btnShowTaskCreate.Click += new System.EventHandler(this.btnShowTaskCreate_Click);
             // 
@@ -237,11 +241,55 @@
             this.lblPerson.Text = "Person";
             this.lblPerson.Visible = false;
             // 
+            // cbTasks
+            // 
+            this.cbTasks.FormattingEnabled = true;
+            this.cbTasks.Location = new System.Drawing.Point(274, 93);
+            this.cbTasks.Name = "cbTasks";
+            this.cbTasks.Size = new System.Drawing.Size(99, 28);
+            this.cbTasks.TabIndex = 23;
+            this.cbTasks.Visible = false;
+            // 
+            // btnDeleteTask
+            // 
+            this.btnDeleteTask.Location = new System.Drawing.Point(379, 93);
+            this.btnDeleteTask.Name = "btnDeleteTask";
+            this.btnDeleteTask.Size = new System.Drawing.Size(108, 29);
+            this.btnDeleteTask.TabIndex = 24;
+            this.btnDeleteTask.Text = "Delete";
+            this.btnDeleteTask.UseVisualStyleBackColor = true;
+            this.btnDeleteTask.Visible = false;
+            this.btnDeleteTask.Click += new System.EventHandler(this.btnDeleteTask_Click);
+            // 
+            // btnDeletePerson
+            // 
+            this.btnDeletePerson.Location = new System.Drawing.Point(379, 25);
+            this.btnDeletePerson.Name = "btnDeletePerson";
+            this.btnDeletePerson.Size = new System.Drawing.Size(108, 29);
+            this.btnDeletePerson.TabIndex = 26;
+            this.btnDeletePerson.Text = "Delete";
+            this.btnDeletePerson.UseVisualStyleBackColor = true;
+            this.btnDeletePerson.Visible = false;
+            this.btnDeletePerson.Click += new System.EventHandler(this.btnDeletePerson_Click);
+            // 
+            // cbPersonPerson
+            // 
+            this.cbPersonPerson.FormattingEnabled = true;
+            this.cbPersonPerson.Location = new System.Drawing.Point(274, 25);
+            this.cbPersonPerson.Name = "cbPersonPerson";
+            this.cbPersonPerson.Size = new System.Drawing.Size(99, 28);
+            this.cbPersonPerson.TabIndex = 25;
+            this.cbPersonPerson.Visible = false;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeletePerson);
+            this.Controls.Add(this.cbPersonPerson);
+            this.Controls.Add(this.btnDeleteTask);
+            this.Controls.Add(this.cbTasks);
             this.Controls.Add(this.lblPerson);
             this.Controls.Add(this.cbPerson);
             this.Controls.Add(this.lblCycle);
@@ -289,5 +337,9 @@
         private Label lblCycle;
         private ComboBox cbPerson;
         private Label lblPerson;
+        private ComboBox cbTasks;
+        private Button btnDeleteTask;
+        private Button btnDeletePerson;
+        private ComboBox cbPersonPerson;
     }
 }

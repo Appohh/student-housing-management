@@ -25,9 +25,25 @@ namespace studentHouseSolution
             tasks.getData();
             persons.getData();
             loggedInUser = userLoggedIn;
+
+            refreshComboBox();
+        }
+
+        public void refreshComboBox()
+        {
+            cbPerson.DataSource = null;
+            cbTasks.DataSource = null;
+
             cbPerson.DataSource = persons.getPersons();
             cbPerson.DisplayMember = "firstName";
             cbPerson.ValueMember = "id";
+            cbTasks.DataSource = tasks.getTasks();
+            cbTasks.DisplayMember = "name";
+            cbTasks.ValueMember = "id";
+            cbPersonPerson.DataSource = persons.getPersons();
+            cbPersonPerson.DisplayMember = "firstName";
+            cbPersonPerson.ValueMember = "id";
+
         }
 
         //give collection of controls and toggle the visibility with the given value, reverse is the control that gets text
@@ -47,17 +63,17 @@ namespace studentHouseSolution
 
         private void btnShowRegister_Click(object sender, EventArgs e)
         {
-            var controls = new List<Control> { txtFirstName, txtLastName, txtEmail, txtPassword, cbAdmin, btnRegister};
+            var controls = new List<Control> { txtFirstName, txtLastName, txtEmail, txtPassword, cbAdmin, btnRegister, cbPersonPerson, btnDeletePerson};
 
             //show and hide right fields
             if (toggleRegister)
             {
-                toggleVisibility(true, controls, btnShowRegister, "Cancel registering");
+                toggleVisibility(true, controls, btnShowRegister, "Cancel person tools");
                 toggleRegister = false;
             }
             else if (!toggleRegister)
             {
-                toggleVisibility(false, controls, btnShowRegister, "Register new user");
+                toggleVisibility(false, controls, btnShowRegister, "Person tools");
                 toggleRegister = true;
             }
         }
@@ -80,29 +96,29 @@ namespace studentHouseSolution
                 txtFirstName.Text = "";txtLastName.Text = "";txtEmail.Text = "";txtPassword.Text = "";
 
                 //show and hide right fields
-                toggleVisibility(false, controls, btnShowRegister, "Register new user");
+                toggleVisibility(false, controls, btnShowRegister, "Person tools");
                 persons.getData();
+                refreshComboBox();
             } else //if unsuccesful
             {
                 MessageBox.Show("Something went wrong while communicating trough database.");
             }
 
-
         }
 
         private void btnShowTaskCreate_Click(object sender, EventArgs e)
         {
-            var controls = new List<Control> { btnCreateTask, txtName, txtDescription, lblCycle, lblDueDate, lblPerson, lblStartDate, dtpStartDate, dtpDueDate, nudCycle, cbPerson };
+            var controls = new List<Control> { btnCreateTask, txtName, txtDescription, lblCycle, lblDueDate, lblPerson, lblStartDate, dtpStartDate, dtpDueDate, nudCycle, cbPerson, cbTasks, btnDeleteTask};
 
             //show and hide right fields
             if (toggleCreateTask)
             {
-                toggleVisibility(true, controls, btnShowTaskCreate, "Cancel task creation");
+                toggleVisibility(true, controls, btnShowTaskCreate, "Cancel task tools");
                 toggleCreateTask = false;
             }
             else if (!toggleCreateTask)
             {
-                toggleVisibility(false, controls, btnShowTaskCreate, "Create new task");
+                toggleVisibility(false, controls, btnShowTaskCreate, "Task tools");
                 toggleCreateTask = true;
             }
         }
@@ -131,16 +147,46 @@ namespace studentHouseSolution
                 txtName.Text = ""; txtDescription.Text = ""; nudCycle.Value = 0;
 
                 //show and hide right fields
-                toggleVisibility(false, controls, btnShowTaskCreate, "Create new task");
+                toggleVisibility(false, controls, btnShowTaskCreate, "Task tools");
                 tasks.getData();
+                refreshComboBox();
             }
             else //if unsuccesful
             {
                 MessageBox.Show("Something went wrong while communicating trough database.");
             }
-
-
            
+        }
+
+        private void btnDeleteTask_Click(object sender, EventArgs e)
+        {
+            if (cbTasks.SelectedValue == null) { MessageBox.Show("Choose a task to delete!"); return; }
+            if (tasks.deleteTask(cbTasks.SelectedValue.ToString()) > 0)
+            {
+                MessageBox.Show("Task deleted succesfully!");
+                tasks.getData();
+                refreshComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong while communicating trough database.");
+            }
+
+        }
+
+        private void btnDeletePerson_Click(object sender, EventArgs e)
+        {
+            if (cbPersonPerson.SelectedValue == null) { MessageBox.Show("Choose a person to delete!"); return; }
+            if (persons.deletePerson(cbPersonPerson.SelectedValue.ToString()) > 0)
+            {
+                MessageBox.Show("Person deleted succesfully!");
+                persons.getData();
+                refreshComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong while communicating trough database.");
+            }
         }
     }
 }

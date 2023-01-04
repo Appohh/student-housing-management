@@ -212,8 +212,15 @@ namespace studentHouseSolution
             {
                 foreach (var task in tasks.getTasks())
                 {
-                    //dd-mm-yy hh-mm-ss -> dd-mm-yy
-                    if (task.dueDate.Substring(0,10) == txt_selected.Text)
+                    //format dates
+                    DateTime startdate = DateTime.Parse(task.startDate);
+
+                    DateTime duedate = DateTime.Parse(task.dueDate);
+
+                    DateTime selecteddate = DateTime.Parse(txt_selected.Text);
+
+                    //check if date between start and due dates
+                    if (selecteddate >= startdate && selecteddate <= duedate)
                     {
                         string personName = "";
                         foreach (var person in persons.getPersons())

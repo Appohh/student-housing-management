@@ -44,6 +44,12 @@ namespace studentHouseSolution
             return executeQuery(query);
         }
 
+       public int deletePerson(string id)
+        {
+            string query = "DELETE FROM Person where Id = " + id;
+            return executeQuery(query);
+        }
+
         //return all person-row objects
         public List<Person> getPersons()
         {
