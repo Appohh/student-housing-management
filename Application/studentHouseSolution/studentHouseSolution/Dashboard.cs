@@ -22,7 +22,6 @@ namespace studentHouseSolution
         static DateTime currentDT = DateTime.Now;
         static int currentYear = currentDT.Year;
         static int currentMonth = currentDT.Month;
-        string selectedDate = Dashboard.staticMonth + "/" + UserControlDays.staticDays + "/" + Dashboard.staticYear;
         public static string date1 = "";
         
         public static int staticMonth , staticYear;
@@ -145,10 +144,10 @@ namespace studentHouseSolution
             //get the current month and year
             DateTime startofthemonth = new DateTime(currentYear, currentMonth, 1);
             int days = DateTime.DaysInMonth(currentYear, currentMonth);
-            
-            //create the panels
-            int daysoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d"));
-            for(int i=1;i<daysoftheweek; i++)
+
+            //create the panels on the right order
+            int daysoftheweek = (int)startofthemonth.DayOfWeek == 0 ? 7 : (int)startofthemonth.DayOfWeek;
+            for (int i=1;i<daysoftheweek; i++)
             {
                 UserControlBlank ucblank = new UserControlBlank();
                 daycontainer.Controls.Add(ucblank);
@@ -233,8 +232,8 @@ namespace studentHouseSolution
                     }
                 }
             }
-
         }
+
 
         private void btn_previous_Click(object sender, EventArgs e)
         {

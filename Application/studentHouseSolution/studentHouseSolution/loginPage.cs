@@ -31,7 +31,7 @@ namespace studentHouseSolution
                 {
                     if (person.role == 0)
                     {
-                        MessageBox.Show("Login succes, welcome " + person.firstName + " " + person.lastName + "!");
+                        //MessageBox.Show("Login succes, welcome " + person.firstName + " " + person.lastName + "!");
                         this.Hide();
                         Dashboard f1 = new Dashboard(person);
                         f1.ShowDialog();
@@ -39,7 +39,7 @@ namespace studentHouseSolution
                     }
                     else if (person.role == 1)
                     {
-                        MessageBox.Show("Login succes, welcome master " + person.firstName + " " + person.lastName + "!");
+                        //MessageBox.Show("Login succes, welcome " + person.firstName + " " + person.lastName + "!");
                         this.Hide();
                         Admin f1 = new Admin(person);
                         f1.ShowDialog();
@@ -53,7 +53,6 @@ namespace studentHouseSolution
 
             }
             MessageBox.Show("Login not correct");
-
         }
     }
 }
