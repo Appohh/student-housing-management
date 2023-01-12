@@ -33,6 +33,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbAnonymous = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tbDescription
@@ -52,7 +53,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(349, 409);
+            this.btnSubmit.Location = new System.Drawing.Point(349, 456);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(94, 29);
             this.btnSubmit.TabIndex = 2;
@@ -78,11 +79,22 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Description";
             // 
+            // cbAnonymous
+            // 
+            this.cbAnonymous.AutoSize = true;
+            this.cbAnonymous.Location = new System.Drawing.Point(329, 409);
+            this.cbAnonymous.Name = "cbAnonymous";
+            this.cbAnonymous.Size = new System.Drawing.Size(116, 24);
+            this.cbAnonymous.TabIndex = 5;
+            this.cbAnonymous.Text = "Anonymous?";
+            this.cbAnonymous.UseVisualStyleBackColor = true;
+            // 
             // AddComplaintForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 497);
+            this.Controls.Add(this.cbAnonymous);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSubmit);
@@ -102,5 +114,6 @@
         private Button btnSubmit;
         private Label label1;
         private Label label2;
+        private CheckBox cbAnonymous;
     }
 }

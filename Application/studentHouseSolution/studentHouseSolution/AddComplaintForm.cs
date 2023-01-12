@@ -13,14 +13,14 @@ namespace studentHouseSolution
     public partial class AddComplaintForm : Form
     {
 
-        handlerCSV csv = new handlerCSV();
+        complaintsDatabase cdb;
+        Person user;
 
-        DataTable dt;
-
-        public AddComplaintForm()
+        public AddComplaintForm(Person user)
         {
             InitializeComponent();
-            dt = csv.Reader("CSV/Complaints.csv");
+            cdb = new complaintsDatabase();
+            this.user = user;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -28,20 +28,18 @@ namespace studentHouseSolution
             if(tbTitle.Text.Length == 0)
             {
                 MessageBox.Show("Title cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (tbDescription.Text.Length == 0)
             {
                 MessageBox.Show("Description cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            DataRow newRow = dt.NewRow();
-            newRow["UserId"] = "0";
-            newRow["Date"] = DateTime.Now.ToString("yyyy-MM-dd");
-            newRow["Title"] = tbTitle.Text;
-            newRow["Description"] = tbDescription.Text;
-            dt.Rows.Add(newRow);
-            csv.Write("CSV/Complaints.csv");
+            cdb.AddComplaint(user.id, tbTitle.Text, tbDescription.Text, cbAnonymous.Checked);
+            Close();
+
 
         }
     }
