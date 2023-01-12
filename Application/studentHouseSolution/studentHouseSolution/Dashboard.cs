@@ -234,17 +234,16 @@ namespace studentHouseSolution
             }
         }
 
-        private void btnAddComplaint_Click(object sender, EventArgs e)
+        private void btnAddComplaint_Click_1(object sender, EventArgs e)
         {
             AddComplaintForm form = new AddComplaintForm(loggedInUser);
             form.ShowDialog();
         }
 
-        private void btnSeeComplaints_Click(object sender, EventArgs e)
+        private void btnSeeComplaints_Click_1(object sender, EventArgs e)
         {
             SeeComplaintsForm form = new SeeComplaintsForm();
             form.ShowDialog();
-
         }
 
         private void btn_previous_Click(object sender, EventArgs e)

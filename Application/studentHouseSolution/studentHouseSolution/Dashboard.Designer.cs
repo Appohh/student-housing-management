@@ -54,10 +54,10 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1464, 189);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1262, 192);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(660, 453);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1318, 873);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // daycontainer
@@ -221,7 +221,7 @@
             this.lblLoggedInUser.BackColor = System.Drawing.Color.Black;
             this.lblLoggedInUser.Font = new System.Drawing.Font("Showcard Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(2565, 53);
+            this.lblLoggedInUser.Location = new System.Drawing.Point(2270, 25);
             this.lblLoggedInUser.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
             this.lblLoggedInUser.Size = new System.Drawing.Size(108, 44);
@@ -233,7 +233,7 @@
             this.btnGetAllTasks.BackColor = System.Drawing.Color.Black;
             this.btnGetAllTasks.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnGetAllTasks.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnGetAllTasks.Location = new System.Drawing.Point(1481, 90);
+            this.btnGetAllTasks.Location = new System.Drawing.Point(1341, 93);
             this.btnGetAllTasks.Margin = new System.Windows.Forms.Padding(6);
             this.btnGetAllTasks.Name = "btnGetAllTasks";
             this.btnGetAllTasks.Size = new System.Drawing.Size(465, 90);
@@ -247,7 +247,7 @@
             this.btnGetMyTasks.BackColor = System.Drawing.Color.Black;
             this.btnGetMyTasks.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnGetMyTasks.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnGetMyTasks.Location = new System.Drawing.Point(1959, 90);
+            this.btnGetMyTasks.Location = new System.Drawing.Point(1904, 93);
             this.btnGetMyTasks.Margin = new System.Windows.Forms.Padding(6);
             this.btnGetMyTasks.Name = "btnGetMyTasks";
             this.btnGetMyTasks.Size = new System.Drawing.Size(531, 90);
@@ -258,23 +258,31 @@
             // 
             // btnAddComplaint
             // 
-            this.btnAddComplaint.Location = new System.Drawing.Point(785, 552);
+            this.btnAddComplaint.BackColor = System.Drawing.Color.Black;
+            this.btnAddComplaint.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnAddComplaint.ForeColor = System.Drawing.Color.Maroon;
+            this.btnAddComplaint.Location = new System.Drawing.Point(1262, 1116);
+            this.btnAddComplaint.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddComplaint.Name = "btnAddComplaint";
-            this.btnAddComplaint.Size = new System.Drawing.Size(171, 48);
-            this.btnAddComplaint.TabIndex = 21;
-            this.btnAddComplaint.Text = "Add complaint";
-            this.btnAddComplaint.UseVisualStyleBackColor = true;
-            this.btnAddComplaint.Click += new System.EventHandler(this.btnAddComplaint_Click);
+            this.btnAddComplaint.Size = new System.Drawing.Size(544, 90);
+            this.btnAddComplaint.TabIndex = 23;
+            this.btnAddComplaint.Text = "Make an complaint";
+            this.btnAddComplaint.UseVisualStyleBackColor = false;
+            this.btnAddComplaint.Click += new System.EventHandler(this.btnAddComplaint_Click_1);
             // 
             // btnSeeComplaints
             // 
-            this.btnSeeComplaints.Location = new System.Drawing.Point(1109, 555);
+            this.btnSeeComplaints.BackColor = System.Drawing.Color.Black;
+            this.btnSeeComplaints.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnSeeComplaints.ForeColor = System.Drawing.Color.Maroon;
+            this.btnSeeComplaints.Location = new System.Drawing.Point(2086, 1116);
+            this.btnSeeComplaints.Margin = new System.Windows.Forms.Padding(6);
             this.btnSeeComplaints.Name = "btnSeeComplaints";
-            this.btnSeeComplaints.Size = new System.Drawing.Size(173, 45);
-            this.btnSeeComplaints.TabIndex = 22;
-            this.btnSeeComplaints.Text = "See complaints";
-            this.btnSeeComplaints.UseVisualStyleBackColor = true;
-            this.btnSeeComplaints.Click += new System.EventHandler(this.btnSeeComplaints_Click);
+            this.btnSeeComplaints.Size = new System.Drawing.Size(494, 90);
+            this.btnSeeComplaints.TabIndex = 24;
+            this.btnSeeComplaints.Text = "See Complaints";
+            this.btnSeeComplaints.UseVisualStyleBackColor = false;
+            this.btnSeeComplaints.Click += new System.EventHandler(this.btnSeeComplaints_Click_1);
             // 
             // Dashboard
             // 
@@ -282,7 +290,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2928, 1255);
+            this.ClientSize = new System.Drawing.Size(2653, 1255);
             this.Controls.Add(this.btnSeeComplaints);
             this.Controls.Add(this.btnAddComplaint);
             this.Controls.Add(this.btnGetMyTasks);
