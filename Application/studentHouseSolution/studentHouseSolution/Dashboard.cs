@@ -57,21 +57,21 @@ namespace studentHouseSolution
                 foreach (var task in tasks.getTasks())
                 {
                     //get name of personid
-                    string personName = "";
+                    Person personFit = null;
                     foreach (var person in persons.getPersons())
                     {
-                        if (task.personId == person.id) { personName = person.firstName + " " + person.lastName; }
+                        if (task.personId == person.id) { personFit = person; }
                     }
 
                     //add label to flowpanelview
-                    addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personName, task.status);
+                    addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personFit, task.status);
                 }
             }
         }
 
 
 
-        public void addTaskLabel(int taskId, string title, string description, string startdate, string duedate, string person, int status)
+        public void addTaskLabel(int taskId, string title, string description, string startdate, string duedate, Person person, int status)
         {
             //set user friendly text for status tiny-int
             string statusText = "";
@@ -79,7 +79,7 @@ namespace studentHouseSolution
 
             //add new label
             Label lbl = new Label();
-            lbl.Text = title + "\r\n\r\n" + description + "\r\n\r\nStartdate : " + startdate.Substring(0,10) + "\r\n\r\nDue date: " + duedate + "\r\n\r\nPerson: " + person +"\r\n\r\nStatus: " + statusText + "\r\n\r\n:)";
+            lbl.Text = title + "\r\n\r\n" + description + "\r\n\r\nStartdate : " + startdate.Substring(0,10) + "\r\n\r\nDue date: " + duedate + "\r\n\r\nPerson: " + person.firstName + " " + person.lastName +"\r\n\r\nStatus: " + statusText + "\r\n\r\n:)";
             lbl.BackColor = Color.RoyalBlue;
             lbl.Font = new Font("ROG Fonts", 12);
             lbl.ForeColor = Color.White;
@@ -87,8 +87,8 @@ namespace studentHouseSolution
             lbl.Size = new Size(614, 340);
             lbl.Margin = new Padding(10);
 
-            //if status == 0 make button to check the task
-            if (status == 0)
+            //if status == 0 make button to check the task and check if for logged in person
+            if (status == 0 && person.id == loggedInUser.id)
             {
                 Button btn = new Button();
                 btn.Name = "tester";
@@ -196,7 +196,7 @@ namespace studentHouseSolution
 
                     if (task.personId == loggedInUser.id)
                     {
-                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, loggedInUser.firstName + " " + loggedInUser.lastName, task.status); ;
+                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, loggedInUser, task.status); ;
                     }
                 }
             }
@@ -221,14 +221,14 @@ namespace studentHouseSolution
                     //check if date between start and due dates
                     if (selecteddate >= startdate && selecteddate <= duedate)
                     {
-                        string personName = "";
+                        Person personFit = null;
                         foreach (var person in persons.getPersons())
                         {
-                            if (task.personId == person.id) { personName = person.firstName + " " + person.lastName; }
+                            if (task.personId == person.id) { personFit = person; }
                         }
 
 
-                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personName, task.status);
+                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personFit, task.status);
                     }
                 }
             }

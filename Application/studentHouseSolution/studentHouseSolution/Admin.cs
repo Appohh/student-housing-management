@@ -33,6 +33,7 @@ namespace studentHouseSolution
         {
             cbPerson.DataSource = null;
             cbTasks.DataSource = null;
+            cbPersonPerson.DataSource = null;
 
             cbPerson.DataSource = persons.getPersons();
             cbPerson.DisplayMember = "firstName";
@@ -177,6 +178,17 @@ namespace studentHouseSolution
         private void btnDeletePerson_Click(object sender, EventArgs e)
         {
             if (cbPersonPerson.SelectedValue == null) { MessageBox.Show("Choose a person to delete!"); return; }
+            foreach(Task task in tasks.getTasks())
+            {
+                if(task.personId == Convert.ToInt32(cbPersonPerson.SelectedValue))
+                {
+                    if (task.status == 0)
+                    {
+                        MessageBox.Show("Person currently has tasks!");
+                    }
+                }
+            }
+
             if (persons.deletePerson(cbPersonPerson.SelectedValue.ToString()) > 0)
             {
                 MessageBox.Show("Person deleted succesfully!");
