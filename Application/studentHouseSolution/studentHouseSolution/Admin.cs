@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Crmf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,8 +32,10 @@ namespace studentHouseSolution
 
         public void refreshComboBox()
         {
+            
             cbPerson.DataSource = null;
             cbTasks.DataSource = null;
+            cbPersonPerson.DataSource= null;
 
             cbPerson.DataSource = persons.getPersons();
             cbPerson.DisplayMember = "firstName";
@@ -80,7 +83,7 @@ namespace studentHouseSolution
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            var controls = new List<Control> { txtFirstName, txtLastName, txtEmail, txtPassword, cbAdmin, btnRegister };
+            var controls = new List<Control> { txtFirstName, txtLastName, txtEmail, txtPassword, cbAdmin, btnRegister, btnDeletePerson, cbPersonPerson };
 
             int role = 0;
             if (string.IsNullOrEmpty(txtFirstName.Text))  { MessageBox.Show("Please fill in your firstname!"); return; }
@@ -125,7 +128,7 @@ namespace studentHouseSolution
 
         private void btnCreateTask_Click(object sender, EventArgs e)
         {
-            var controls = new List<Control> { btnCreateTask, txtName, txtDescription, lblCycle, lblDueDate, lblPerson, lblStartDate, dtpStartDate, dtpDueDate, nudCycle, cbPerson };
+            var controls = new List<Control> { btnCreateTask, txtName, txtDescription, lblCycle, lblDueDate, lblPerson, lblStartDate, dtpStartDate, dtpDueDate, nudCycle, cbPerson, btnDeleteTask, cbTasks };
 
             if (string.IsNullOrEmpty(txtName.Text)) { MessageBox.Show("Please fill in Name!"); return; }
             if (string.IsNullOrEmpty(txtDescription.Text)) { MessageBox.Show("Please fill in Description!"); return; }
@@ -160,10 +163,13 @@ namespace studentHouseSolution
 
         private void btnDeleteTask_Click(object sender, EventArgs e)
         {
+            var controls = new List<Control> { btnCreateTask, txtName, txtDescription, lblCycle, lblDueDate, lblPerson, lblStartDate, dtpStartDate, dtpDueDate, nudCycle, cbPerson, btnDeleteTask, cbTasks };
+
             if (cbTasks.SelectedValue == null) { MessageBox.Show("Choose a task to delete!"); return; }
             if (tasks.deleteTask(cbTasks.SelectedValue.ToString()) > 0)
             {
                 MessageBox.Show("Task deleted succesfully!");
+                toggleVisibility(false, controls, btnShowTaskCreate, "Task tools");
                 tasks.getData();
                 refreshComboBox();
             }
@@ -176,10 +182,24 @@ namespace studentHouseSolution
 
         private void btnDeletePerson_Click(object sender, EventArgs e)
         {
+            var controls = new List<Control> { txtFirstName, txtLastName, txtEmail, txtPassword, cbAdmin, btnRegister, btnDeletePerson, cbPersonPerson };
+
             if (cbPersonPerson.SelectedValue == null) { MessageBox.Show("Choose a person to delete!"); return; }
+            foreach (Task task in tasks.getTasks())
+            {
+                if(task.personId == Convert.ToInt32(cbPersonPerson.SelectedValue))
+                {
+                    if (task.status == 0)
+                    {
+                        MessageBox.Show("Person currently has tasks!");
+                        return;
+                    }
+                }
+            }
             if (persons.deletePerson(cbPersonPerson.SelectedValue.ToString()) > 0)
             {
                 MessageBox.Show("Person deleted succesfully!");
+                toggleVisibility(false, controls, btnShowRegister, "Person tools");
                 persons.getData();
                 refreshComboBox();
             }
