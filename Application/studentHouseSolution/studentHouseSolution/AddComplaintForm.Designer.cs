@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddComplaintForm));
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -38,24 +39,27 @@
             // 
             // tbDescription
             // 
-            this.tbDescription.Location = new System.Drawing.Point(160, 78);
+            this.tbDescription.Location = new System.Drawing.Point(340, 195);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(6);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(465, 325);
+            this.tbDescription.Size = new System.Drawing.Size(984, 662);
             this.tbDescription.TabIndex = 0;
             // 
             // tbTitle
             // 
-            this.tbTitle.Location = new System.Drawing.Point(160, 25);
+            this.tbTitle.Location = new System.Drawing.Point(340, 86);
+            this.tbTitle.Margin = new System.Windows.Forms.Padding(6);
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(465, 27);
+            this.tbTitle.Size = new System.Drawing.Size(984, 47);
             this.tbTitle.TabIndex = 1;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(349, 456);
+            this.btnSubmit.Location = new System.Drawing.Point(742, 935);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(6);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(94, 29);
+            this.btnSubmit.Size = new System.Drawing.Size(200, 59);
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -64,42 +68,55 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(349, 2);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(798, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 20);
+            this.label1.Size = new System.Drawing.Size(91, 50);
             this.label1.TabIndex = 3;
             this.label1.Text = "Title";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(329, 55);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(733, 139);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 20);
+            this.label2.Size = new System.Drawing.Size(209, 50);
             this.label2.TabIndex = 4;
             this.label2.Text = "Description";
             // 
             // cbAnonymous
             // 
             this.cbAnonymous.AutoSize = true;
-            this.cbAnonymous.Location = new System.Drawing.Point(329, 409);
+            this.cbAnonymous.BackColor = System.Drawing.Color.Transparent;
+            this.cbAnonymous.ForeColor = System.Drawing.Color.White;
+            this.cbAnonymous.Location = new System.Drawing.Point(725, 869);
+            this.cbAnonymous.Margin = new System.Windows.Forms.Padding(6);
             this.cbAnonymous.Name = "cbAnonymous";
-            this.cbAnonymous.Size = new System.Drawing.Size(116, 24);
+            this.cbAnonymous.Size = new System.Drawing.Size(229, 45);
             this.cbAnonymous.TabIndex = 5;
             this.cbAnonymous.Text = "Anonymous?";
-            this.cbAnonymous.UseVisualStyleBackColor = true;
+            this.cbAnonymous.UseVisualStyleBackColor = false;
             // 
             // AddComplaintForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 497);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1700, 1019);
             this.Controls.Add(this.cbAnonymous);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.tbTitle);
             this.Controls.Add(this.tbDescription);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AddComplaintForm";
             this.Text = "Add complaint";
             this.ResumeLayout(false);
