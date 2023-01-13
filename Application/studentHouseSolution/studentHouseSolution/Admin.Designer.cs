@@ -57,8 +57,8 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtFirstName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtFirstName.BackColor = System.Drawing.Color.White;
+            this.txtFirstName.ForeColor = System.Drawing.Color.Black;
             this.txtFirstName.Location = new System.Drawing.Point(26, 121);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(6);
             this.txtFirstName.MaxLength = 50;
@@ -70,8 +70,8 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtLastName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtLastName.BackColor = System.Drawing.Color.White;
+            this.txtLastName.ForeColor = System.Drawing.Color.Black;
             this.txtLastName.Location = new System.Drawing.Point(26, 183);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(6);
             this.txtLastName.MaxLength = 50;
@@ -83,8 +83,8 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(328, 183);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(6);
             this.txtPassword.MaxLength = 50;
@@ -96,8 +96,8 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(328, 124);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtEmail.MaxLength = 50;
@@ -169,8 +169,8 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDescription.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtDescription.BackColor = System.Drawing.Color.White;
+            this.txtDescription.ForeColor = System.Drawing.Color.Black;
             this.txtDescription.Location = new System.Drawing.Point(26, 498);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(6);
             this.txtDescription.MaxLength = 100;
@@ -183,8 +183,8 @@
             // 
             // txtName
             // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtName.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.Location = new System.Drawing.Point(26, 430);
             this.txtName.Margin = new System.Windows.Forms.Padding(6);
             this.txtName.MaxLength = 50;
@@ -215,7 +215,7 @@
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblStartDate.BackColor = System.Drawing.Color.Transparent;
             this.lblStartDate.ForeColor = System.Drawing.SystemColors.Window;
             this.lblStartDate.Location = new System.Drawing.Point(491, 433);
             this.lblStartDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -228,7 +228,7 @@
             // lblDueDate
             // 
             this.lblDueDate.AutoSize = true;
-            this.lblDueDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblDueDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDueDate.ForeColor = System.Drawing.SystemColors.Window;
             this.lblDueDate.Location = new System.Drawing.Point(491, 576);
             this.lblDueDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -251,7 +251,7 @@
             // lblCycle
             // 
             this.lblCycle.AutoSize = true;
-            this.lblCycle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblCycle.BackColor = System.Drawing.Color.Transparent;
             this.lblCycle.ForeColor = System.Drawing.SystemColors.Window;
             this.lblCycle.Location = new System.Drawing.Point(1035, 451);
             this.lblCycle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -274,7 +274,7 @@
             // lblPerson
             // 
             this.lblPerson.AutoSize = true;
-            this.lblPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblPerson.BackColor = System.Drawing.Color.Transparent;
             this.lblPerson.ForeColor = System.Drawing.SystemColors.Window;
             this.lblPerson.Location = new System.Drawing.Point(1035, 576);
             this.lblPerson.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -286,8 +286,8 @@
             // 
             // cbTasks
             // 
-            this.cbTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cbTasks.ForeColor = System.Drawing.SystemColors.Window;
+            this.cbTasks.BackColor = System.Drawing.Color.White;
+            this.cbTasks.ForeColor = System.Drawing.Color.Black;
             this.cbTasks.FormattingEnabled = true;
             this.cbTasks.Location = new System.Drawing.Point(26, 786);
             this.cbTasks.Margin = new System.Windows.Forms.Padding(6);
@@ -325,8 +325,8 @@
             // 
             // cbPersonPerson
             // 
-            this.cbPersonPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cbPersonPerson.ForeColor = System.Drawing.SystemColors.Window;
+            this.cbPersonPerson.BackColor = System.Drawing.Color.White;
+            this.cbPersonPerson.ForeColor = System.Drawing.Color.Black;
             this.cbPersonPerson.FormattingEnabled = true;
             this.cbPersonPerson.Location = new System.Drawing.Point(761, 124);
             this.cbPersonPerson.Margin = new System.Windows.Forms.Padding(6);
