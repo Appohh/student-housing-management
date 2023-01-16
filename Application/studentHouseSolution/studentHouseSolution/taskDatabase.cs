@@ -55,6 +55,12 @@ namespace studentHouseSolution
             return executeQuery(query);
         }
 
+        public int changeTaskDueDate(string id, DateTime newDueDate)
+        {
+            string query = $"UPDATE Task SET DueDate='{newDueDate:yyyy-MM-dd}', Status=0 WHERE Id={id}";
+            return executeQuery(query);
+        }
+
         public void checkTask(string id)
         {
             string query = "UPDATE Task SET Status = 1 where Id = " + id;

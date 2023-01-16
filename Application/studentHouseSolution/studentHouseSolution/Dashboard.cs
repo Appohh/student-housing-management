@@ -39,9 +39,34 @@ namespace studentHouseSolution
             loggedInUser = userLoggedIn;
             lblLoggedInUser.Text = loggedInUser.firstName + " " + loggedInUser.lastName;
 
+            if (UpdateCyclicTasks())
+            {
+                tasks.getData();
+                persons.getData();
+            }
 
             showAllTasks();
 
+        }
+
+        bool UpdateCyclicTasks()
+        {
+            bool wasUpdated = false;
+            List<Task> cyclicTaskList = tasks.getTasks().Where(t => t.cycle != 0).ToList();
+            foreach(Task task in cyclicTaskList)
+            {
+                DateTime dueDate = DateTime.Parse(task.dueDate);
+                if(dueDate <= DateTime.Now || task.status == 1)
+                {
+                    do
+                        dueDate = dueDate.AddDays(7);
+                    while (dueDate <= DateTime.Now);
+                    tasks.changeTaskDueDate(task.id.ToString(), dueDate);
+                    wasUpdated = true;
+                }
+            }
+
+            return wasUpdated;
         }
 
         public void changeDateTxt(string date)
@@ -117,6 +142,8 @@ namespace studentHouseSolution
             try { tasks.checkTask(btn.Tag.ToString()); MessageBox.Show("Check ;)");  } catch { MessageBox.Show("Something went wrong, try again another time or contact an admin."); }
             //refresh object data
             tasks.getData();
+            if(UpdateCyclicTasks())
+                tasks.getData();
             //refresh task list
             showAllTasks();
             

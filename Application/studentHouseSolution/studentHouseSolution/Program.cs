@@ -12,8 +12,6 @@ namespace studentHouseSolution
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new loginPage());
-            //Application.Run(new AddComplaintForm(3));
-            //Application.Run(new SeeComplaintsForm());
         }
     }
 }
