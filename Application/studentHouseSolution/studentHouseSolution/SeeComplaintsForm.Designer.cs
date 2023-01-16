@@ -35,21 +35,19 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(303, 1);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(143, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1035, 917);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(487, 447);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // SeeComplaintsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1700, 922);
+            this.ClientSize = new System.Drawing.Size(876, 517);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "SeeComplaintsForm";
             this.Text = "SeeComplaintsForm";
             this.ResumeLayout(false);

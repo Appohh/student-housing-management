@@ -242,7 +242,7 @@ namespace studentHouseSolution
 
         private void btnSeeComplaints_Click_1(object sender, EventArgs e)
         {
-            SeeComplaintsForm form = new SeeComplaintsForm();
+            SeeComplaintsForm form = new SeeComplaintsForm(loggedInUser);
             form.ShowDialog();
         }
 

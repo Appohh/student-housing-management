@@ -16,6 +16,8 @@ namespace studentHouseSolution
         List<Person> persons;
         List<Complaint> complaints;
 
+        Person user;
+
         Person? getPersonById(int id)
         {
             foreach(Person person in persons)
@@ -35,7 +37,7 @@ namespace studentHouseSolution
             lbl.Font = new Font("ROG Fonts", 12);
             lbl.ForeColor = Color.White;
             lbl.AutoSize = false;
-            lbl.Size = new Size(614, 340);
+            lbl.Size = new Size(414, 340);
             lbl.Margin = new Padding(10);
 
             //add whole label to flowlayoutpanel
@@ -43,9 +45,10 @@ namespace studentHouseSolution
         }
 
 
-        public SeeComplaintsForm()
+        public SeeComplaintsForm(Person user)
         {
             InitializeComponent();
+            this.user = user;
             personDatabase personsDb = new personDatabase();
             complaintsDatabase complaintsDb = new complaintsDatabase();
 
