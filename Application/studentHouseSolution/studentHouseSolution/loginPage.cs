@@ -45,7 +45,11 @@ namespace studentHouseSolution
                     fileStream.Close();
             }
 
-            TryLogIn(email, password, false);
+            if(MessageBox.Show($"Log in with {email}?", "Login", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                TryLogIn(email, password, false);
+            }
 
         }
 
@@ -111,7 +115,7 @@ namespace studentHouseSolution
         {
             string email = txtEmail.Text;
             string password = txtPassword.Text;
-            TryLogIn(email, password, true);
+            TryLogIn(email, password, cbKeepMeLogged.Checked);
             
         }
     }
