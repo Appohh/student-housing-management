@@ -70,5 +70,10 @@ namespace studentHouseSolution
                 addComplaintLabel(complaint.Title, complaint.Description, authorName, complaint.Timestamp);
             }
         }
+
+        private void SeeComplaintsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
