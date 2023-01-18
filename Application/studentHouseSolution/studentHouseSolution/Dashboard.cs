@@ -243,7 +243,7 @@ namespace studentHouseSolution
 
                     DateTime duedate = DateTime.Parse(task.dueDate);
 
-                    DateTime selecteddate = DateTime.Parse(txt_selected.Text);
+                    DateTime selecteddate = DateTime.ParseExact(txt_selected.Text, "d-M-yyyy", CultureInfo.InvariantCulture);
 
                     //check if date between start and due dates
                     if (selecteddate >= startdate && selecteddate <= duedate)
