@@ -89,14 +89,19 @@ namespace studentHouseSolution
                     }
 
                     //add label to flowpanelview
-                    addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personFit, task.status);
+                    addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personFit, task.status, task.cycle);
                 }
             }
         }
 
 
+        bool AreFallingInSameWeek(DateTime a, DateTime b)
+        {
+            return a.AddDays(7 - (int)a.DayOfWeek).Date.Equals(b.AddDays(7 - (int)b.DayOfWeek).Date);
+        }
 
-        public void addTaskLabel(int taskId, string title, string description, string startdate, string duedate, Person person, int status)
+
+        public void addTaskLabel(int taskId, string title, string description, string startdate, string duedate, Person person, int status, int cyclic)
         {
             //set user friendly text for status tiny-int
             string statusText = "";
@@ -112,8 +117,15 @@ namespace studentHouseSolution
             lbl.Size = new Size(614, 340);
             lbl.Margin = new Padding(10);
 
+
+            DateTime dueTime = DateTime.Parse(duedate);
+
+            bool isCyclic = cyclic != 0;
+
+            bool cyclicAndTaskWeek = !isCyclic | AreFallingInSameWeek(dueTime, DateTime.Now);
+
             //if status == 0 make button to check the task and check if for logged in person
-            if (status == 0 && person.id == loggedInUser.id)
+            if (status == 0 && person.id == loggedInUser.id && cyclicAndTaskWeek)
             {
                 Button btn = new Button();
                 btn.Name = "tester";
@@ -223,7 +235,7 @@ namespace studentHouseSolution
 
                     if (task.personId == loggedInUser.id)
                     {
-                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, loggedInUser, task.status); ;
+                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, loggedInUser, task.status, task.cycle);
                     }
                 }
             }
@@ -255,7 +267,7 @@ namespace studentHouseSolution
                         }
 
 
-                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personFit, task.status);
+                        addTaskLabel(task.id, task.name, task.description, task.startDate, task.dueDate, personFit, task.status, task.cycle);
                     }
                 }
             }
