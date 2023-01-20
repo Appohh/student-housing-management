@@ -54,19 +54,19 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1262, 193);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(594, 94);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1318, 873);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(620, 426);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // daycontainer
             // 
             this.daycontainer.BackColor = System.Drawing.Color.Black;
-            this.daycontainer.Location = new System.Drawing.Point(53, 262);
-            this.daycontainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.daycontainer.Location = new System.Drawing.Point(25, 128);
+            this.daycontainer.Margin = new System.Windows.Forms.Padding(1);
             this.daycontainer.Name = "daycontainer";
-            this.daycontainer.Size = new System.Drawing.Size(1092, 800);
+            this.daycontainer.Size = new System.Drawing.Size(514, 390);
             this.daycontainer.TabIndex = 6;
             // 
             // btn_next
@@ -74,10 +74,9 @@
             this.btn_next.BackColor = System.Drawing.Color.Black;
             this.btn_next.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_next.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_next.Location = new System.Drawing.Point(746, 1099);
-            this.btn_next.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btn_next.Location = new System.Drawing.Point(351, 536);
             this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(400, 119);
+            this.btn_next.Size = new System.Drawing.Size(188, 58);
             this.btn_next.TabIndex = 7;
             this.btn_next.Text = "Next";
             this.btn_next.UseVisualStyleBackColor = false;
@@ -88,10 +87,9 @@
             this.btn_previous.BackColor = System.Drawing.Color.Black;
             this.btn_previous.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_previous.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_previous.Location = new System.Drawing.Point(51, 1099);
-            this.btn_previous.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btn_previous.Location = new System.Drawing.Point(24, 536);
             this.btn_previous.Name = "btn_previous";
-            this.btn_previous.Size = new System.Drawing.Size(400, 119);
+            this.btn_previous.Size = new System.Drawing.Size(188, 58);
             this.btn_previous.TabIndex = 8;
             this.btn_previous.Text = "Previous";
             this.btn_previous.UseVisualStyleBackColor = false;
@@ -103,10 +101,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(53, 189);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(25, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 41);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Monday";
             // 
@@ -116,10 +113,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(200, 189);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(94, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 41);
+            this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Tuesday";
             // 
@@ -129,10 +125,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(540, 189);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(254, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 41);
+            this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Thursday";
             // 
@@ -142,10 +137,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(346, 189);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Location = new System.Drawing.Point(163, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 41);
+            this.label5.Size = new System.Drawing.Size(91, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Wednesday";
             // 
@@ -155,10 +149,9 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(814, 189);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Location = new System.Drawing.Point(383, 92);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 41);
+            this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "Saturday";
             // 
@@ -168,10 +161,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(697, 189);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Location = new System.Drawing.Point(328, 92);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 41);
+            this.label7.Size = new System.Drawing.Size(54, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Friday";
             // 
@@ -181,10 +173,9 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(969, 189);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Location = new System.Drawing.Point(456, 92);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 41);
+            this.label8.Size = new System.Drawing.Size(61, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Sunday";
             // 
@@ -193,10 +184,9 @@
             this.Lbl_Date.BackColor = System.Drawing.Color.Transparent;
             this.Lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.Lbl_Date.ForeColor = System.Drawing.Color.White;
-            this.Lbl_Date.Location = new System.Drawing.Point(26, 53);
-            this.Lbl_Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Lbl_Date.Location = new System.Drawing.Point(12, 26);
             this.Lbl_Date.Name = "Lbl_Date";
-            this.Lbl_Date.Size = new System.Drawing.Size(1158, 117);
+            this.Lbl_Date.Size = new System.Drawing.Size(545, 57);
             this.Lbl_Date.TabIndex = 16;
             this.Lbl_Date.Text = "Month YEAR";
             this.Lbl_Date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -206,11 +196,10 @@
             this.txt_selected.BackColor = System.Drawing.Color.Black;
             this.txt_selected.Font = new System.Drawing.Font("Showcard Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.txt_selected.ForeColor = System.Drawing.SystemColors.Window;
-            this.txt_selected.Location = new System.Drawing.Point(463, 1132);
-            this.txt_selected.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_selected.Location = new System.Drawing.Point(218, 552);
             this.txt_selected.Name = "txt_selected";
             this.txt_selected.ReadOnly = true;
-            this.txt_selected.Size = new System.Drawing.Size(263, 57);
+            this.txt_selected.Size = new System.Drawing.Size(126, 32);
             this.txt_selected.TabIndex = 17;
             this.txt_selected.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_selected.TextChanged += new System.EventHandler(this.txt_selected_TextChanged);
@@ -221,10 +210,9 @@
             this.lblLoggedInUser.BackColor = System.Drawing.Color.Black;
             this.lblLoggedInUser.Font = new System.Drawing.Font("Showcard Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(2270, 25);
-            this.lblLoggedInUser.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblLoggedInUser.Location = new System.Drawing.Point(1068, 12);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(108, 44);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(54, 23);
             this.lblLoggedInUser.TabIndex = 18;
             this.lblLoggedInUser.Text = "User";
             // 
@@ -233,10 +221,9 @@
             this.btnGetAllTasks.BackColor = System.Drawing.Color.Black;
             this.btnGetAllTasks.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnGetAllTasks.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnGetAllTasks.Location = new System.Drawing.Point(1341, 92);
-            this.btnGetAllTasks.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGetAllTasks.Location = new System.Drawing.Point(631, 45);
             this.btnGetAllTasks.Name = "btnGetAllTasks";
-            this.btnGetAllTasks.Size = new System.Drawing.Size(465, 90);
+            this.btnGetAllTasks.Size = new System.Drawing.Size(219, 44);
             this.btnGetAllTasks.TabIndex = 19;
             this.btnGetAllTasks.Text = "Get all tasks";
             this.btnGetAllTasks.UseVisualStyleBackColor = false;
@@ -247,10 +234,9 @@
             this.btnGetMyTasks.BackColor = System.Drawing.Color.Black;
             this.btnGetMyTasks.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnGetMyTasks.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnGetMyTasks.Location = new System.Drawing.Point(1904, 92);
-            this.btnGetMyTasks.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGetMyTasks.Location = new System.Drawing.Point(896, 45);
             this.btnGetMyTasks.Name = "btnGetMyTasks";
-            this.btnGetMyTasks.Size = new System.Drawing.Size(531, 90);
+            this.btnGetMyTasks.Size = new System.Drawing.Size(250, 44);
             this.btnGetMyTasks.TabIndex = 20;
             this.btnGetMyTasks.Text = "Get all my tasks";
             this.btnGetMyTasks.UseVisualStyleBackColor = false;
@@ -261,10 +247,9 @@
             this.btnAddComplaint.BackColor = System.Drawing.Color.Black;
             this.btnAddComplaint.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnAddComplaint.ForeColor = System.Drawing.Color.Maroon;
-            this.btnAddComplaint.Location = new System.Drawing.Point(1262, 1115);
-            this.btnAddComplaint.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAddComplaint.Location = new System.Drawing.Point(594, 526);
             this.btnAddComplaint.Name = "btnAddComplaint";
-            this.btnAddComplaint.Size = new System.Drawing.Size(544, 90);
+            this.btnAddComplaint.Size = new System.Drawing.Size(256, 81);
             this.btnAddComplaint.TabIndex = 23;
             this.btnAddComplaint.Text = "Make an complaint";
             this.btnAddComplaint.UseVisualStyleBackColor = false;
@@ -275,10 +260,9 @@
             this.btnSeeComplaints.BackColor = System.Drawing.Color.Black;
             this.btnSeeComplaints.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnSeeComplaints.ForeColor = System.Drawing.Color.Maroon;
-            this.btnSeeComplaints.Location = new System.Drawing.Point(2087, 1115);
-            this.btnSeeComplaints.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSeeComplaints.Location = new System.Drawing.Point(982, 544);
             this.btnSeeComplaints.Name = "btnSeeComplaints";
-            this.btnSeeComplaints.Size = new System.Drawing.Size(493, 90);
+            this.btnSeeComplaints.Size = new System.Drawing.Size(232, 44);
             this.btnSeeComplaints.TabIndex = 24;
             this.btnSeeComplaints.Text = "See Complaints";
             this.btnSeeComplaints.UseVisualStyleBackColor = false;
@@ -286,11 +270,11 @@
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2845, 1234);
+            this.ClientSize = new System.Drawing.Size(1262, 613);
             this.Controls.Add(this.btnSeeComplaints);
             this.Controls.Add(this.btnAddComplaint);
             this.Controls.Add(this.btnGetMyTasks);
@@ -311,7 +295,7 @@
             this.Controls.Add(this.daycontainer);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
